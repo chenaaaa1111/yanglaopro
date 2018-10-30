@@ -1,0 +1,11 @@
+<view class="adDialog-container" catchtouchmove="true" wx:if="{{isShowAd}}">
+  <view class="ad-content myBounceInDown">
+      <view class="ad-banner"> 
+        <image src="{{adImg_url}}"></image>
+      </view>
+      <view class="close-adDialog" bind:tap="closeAd">
+          <text class="iconfont icon-close"></text>
+      </view>
+  </view>
+</view>
+

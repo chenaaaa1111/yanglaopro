@@ -1,0 +1,40 @@
+<template name="listItem">
+  <view>
+    <navigator open-type="navigate" url="/pages/organization/details/details?id={{key}}">
+      <view class="list-item">
+        <view class="item-image">
+            <webp wx:if="{{imgable}}" imgstyle="house-image" src="{{img}}" data-id="{{key}}" binderror="imageError"></webp>
+            <image wx:else class="house-image" src="/images/default.png"></image>
+        </view>
+        <view class="item-content">
+          <view class="house-details">
+            <view class="house-title">{{title}}</view>
+            <view class="house-address">
+              <text>{{address}}</text>
+            </view>
+            <view class="price">
+              <text class="price-value">{{price}}</text>
+              <text class='price-unit'>元/人/月</text>
+            </view>
+            <view class="house-tags">
+              <text wx:if="{{hospital}}" class="tag">医疗</text>
+              <text wx:if="{{medical}}" class="tag">医保</text>
+              <text wx:if="{{cooperateHospital}}" class="tag">绿通</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <view class='caretypes'>
+      <view class='double-items'>
+        <view class="left-item">
+          <text>照护类型：</text>
+          <text wx:for="{{types}}" wx:key="*this" class='caretype'>{{item}}</text>
+        </view>
+        <view class="right-item">
+          <text class='status'>{{status}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,50 @@
+<scroll-view class="container">
+    <view class="xlUserBox">
+        <view class="xlImageBox"> 
+            <open-data class="xlUserImg" wx:if="{{userLoginInfo.phone}}" type="userAvatarUrl"></open-data>
+            <view class="xlImageBg iconfont icon-wode" wx:if="{{!userLoginInfo.phone}}"></view>
+        </view>
+        <view class="xlTextBox">
+            <text class="xlText" wx:if="{{!userLoginInfo.phone}}" bindtap="xlGotoLoad">点击注册/登录</text>
+            <text class="xlText" wx:if="{{userLoginInfo.phone}}">{{userLoginInfo.phone}}</text>
+        </view>
+        <view class="xlLoginOutBtn" wx:if="{{(userLoginInfo && userLoginInfo.token)}}" bindtap="xlLoginOut">退出</view>
+    </view>
+    <view class="xlListBox">
+        <view class="xlList" bindtap="xlGotoInfo">
+            <view class="xlTextBox">我的信息</view>
+            <view class="xlRightBox"></view>
+        </view>
+        <view class="xlList" bindtap="xlGotoXuqiu">
+            <view class="xlTextBox">养老需求</view>
+            <view class="xlRightBox"></view>
+        </view>
+        <view class="xlList" bindtap="xlGotoJigou">
+            <view class="xlTextBox">收藏的机构养老</view>
+            <view class="xlRightBox"></view>
+        </view>
+        <view class="xlList" bindtap="xlGotoFuwu">
+            <view class="xlTextBox">收藏的居家养老</view>
+            <view class="xlRightBox"></view>
+        </view>
+    </view>
+    <view class="xlListBox">
+        <view class="xlList" bindtap="xlGotoWenjuan">
+            <view class="xlTextBox">用户满意度调查</view>
+            <view class="xlRightBox"></view>
+        </view>
+    </view>
+    <view class="xlListBox"> 
+        <view class="xlList xlTelItem" bindtap="xlGotoTel">
+            <view class="xlTextBox">热线电话：010-6588 3352</view>
+        </view>
+        <view class="xlList xlTelItem">
+            <view class="xlTextBox">服务时间：9:00-18:00 工作日</view>
+        </view>
+        <view class="xlList">
+            <view class="xlTextBox">邮<text class="xlJiange"></text>箱：bdylktz@163.com</view>
+        </view>
+    </view>
+    <!-- <view class="xlSubmitBtn" wx:if="{{(userLoginInfo && userLoginInfo.token)}}"><button bindtap="xlLoginOut">退出登录</button></view> -->
+    <!-- <component-mytabbar tabbarNum="{{2}}"></component-mytabbar> -->
+</scroll-view>

@@ -1,0 +1,155 @@
+.container {
+  padding: 0 30rpx;
+}
+
+button[plain] {
+  border: 0;
+}
+
+.title {
+  font-size: 48rpx;
+  color: #333;
+  letter-spacing: 0.38rpx;
+  line-height: 46rpx;
+  text-align: center;
+  margin: 40rpx 0 72rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.phone-num{
+  margin-bottom:64rpx;
+}
+.phone-num input {
+  display: inline-block;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  border: 2rpx solid #dbdbdb;
+  /* opacity: 0.5; */
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #24253d;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.section textarea {
+  border: 2rpx solid #dbdbdb;
+  margin-top: 40rpx;
+  width: 100%;
+  height: 440rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #24253d;
+  padding: 22rpx 32rpx;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.formbtn {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 26rpx 0;
+  border-top: 2rpx solid #f1f1f1;
+  background: #fff;
+}
+
+.formbtn .subbtn {
+  width: 330rpx;
+  line-height: 80rpx;
+  border: 2rpx solid #f33;
+  text-align: center;
+  font-size: 36rpx;
+  color: #f33;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin-left: 30rpx;
+}
+
+.formbtn .affirm {
+  background: #f33;
+  color: #fff;
+}
+
+.formbtn .wxbtn {
+  position: absolute;
+  top: 1;
+  right: 32rpx;
+  opacity: 0;
+}
+
+.success-model {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-box {
+  width: 750rpx;
+  padding: 300rpx 0 100rpx;
+  text-align: center;
+}
+
+.success-model .iconfont {
+  font-size: 200rpx;
+}
+.success-model .icon-chenggong{
+  color:#ff3333;
+}
+.success-model .text {
+  width: 750rpx;
+  font-size: 44rpx;
+  color: #4a4a4a;
+}
+
+.success-model .text text {
+  width: 750rpx;
+  display: inline-block;
+  text-align: center;
+}
+.app-star .star{
+  margin-left:66.4rpx;
+  margin-bottom:13.6rpx;
+  display: flex;
+  flex-direction: row;
+}
+.app-star .star .starPIC .iconfont{
+  font-size:72rpx;
+  margin-left:34.8rpx;
+}
+.app-star .star .star1 .iconfont{
+  color:#ff3333;
+}
+.app-star .star .star2 .iconfont{  
+  color:#fdbbbb;
+}
+/* .app-star .star image {
+  width: 72rpx;
+  height: 68.4rpx;
+  margin-left:34.8rpx;
+} */
+
+.app-star .note {
+  display: flex;
+  flex-direction: column;
+  font-size: 32rpx;
+  color: #4a4a4a;
+  text-align: center;
+  line-height:50rpx;
+}

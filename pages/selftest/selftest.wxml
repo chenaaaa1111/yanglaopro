@@ -1,0 +1,44 @@
+<!--pages/selftest/selftest.wxml-->
+
+<!-- <view wx:if="{{testing}}">
+  <questionnaire  qId='{{question.qId}}' title='{{question.title}}' remark='{{question.remark}}' options='{{question.options}}' bindchange='onAnswerChanged'></questionnaire>
+======= -->
+<view wx:if="{{testing}}">
+  <questionnaire  gtype='RADIO_TEST' qId='{{question.qId}}' title='{{question.title}}' remark='{{question.remark}}' options='{{question.options}}' bindchange='onAnswerChanged'></questionnaire>
+  <view class='continue' bindtap='stepNext'>继续</view>
+</view>
+<view wx:if="{{!testing&&!end}}">
+      <view class='imgContainer'>
+          <image src="./../../images/doctor.png" class="imgDoctor"></image>
+      </view>
+        <view class='remark'>
+              选择中的“<text class="isred">是</text>”表示在过去的几年中在认知能力方面（记忆或者思考）出现问题
+        </view>  
+        <view class='continue start' bindtap='start'>开始</view>
+</view>
+<view wx:if="{{!testing&&end}}">
+       <view class='imgContainer'>
+          <image src="./../../images/doctor.png" class="imgDoctor"></image>
+      </view>
+        <view class='remark'>
+                <view class='remark'>
+                    
+          <view wx:if="{{healthy}}">
+                祝贺您，
+            根据您的自测，
+           目前很健康，请平时多加锻炼
+          </view>
+          <view wx:if="{{!healthy}}">
+                你好，根据您的自测,
+          有可能是记忆出了问题，
+          <text class="sugess">建议去记忆障碍门诊或者找专业医生咨询</text>
+          </view>
+        </view>  
+        <view class='phone' bindtap='tocallphone'>
+          咨询电话：010－6588 3352
+        </view>
+
+        <view class='continue end' bindtap='gotoactive'>返回关爱认知症</view>
+        </view>  
+</view>
+<callphone showCallPhone="{{showPhone}}" />

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "radiogroup":"/components/radiogroup/radiogroup",
+    "multigroup": "/components/multigroup/multigroup"
+  }
+}

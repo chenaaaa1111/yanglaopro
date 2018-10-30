@@ -1,0 +1,11 @@
+<view class="container"> 
+    <view class="xlTitle"><text>手机快捷登录</text></view>
+    <view class="xlPhoneBox xlFormBox {{phoneNumErr ? 'xlErrorActive' : ''}}">
+        <input type="number" placeholder="请输入手机号" value="{{phoneNum}}" bindinput="xlPhoneInputTap"/>
+        <button bindtap="getMsgCode">{{butMsg}}</button>
+    </view>
+    <view class="xlMsgBox xlFormBox {{msgCodeErr ? 'xlErrorActive' : ''}}">
+        <input type="number" placeholder="请输入验证码" value="{{msgCode}}" bindinput="xlMsgInputTap"/>
+    </view>
+    <view class="xlSubmitBtn"><button bindtap="login">登 录</button></view>
+</view>

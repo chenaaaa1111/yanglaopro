@@ -1,0 +1,231 @@
+<import src="../../../templates/msg-board.wxml" />
+<detailswiper pensionImages="{{details.pensionImages}}" imgUrl="{{item.imgUrl}}" curIndex="{{swiperImgIndex}}" />
+
+<view class="container">
+  <view class='lump lump-name-price'>
+    <view class="house-name">
+      <text class='name'>{{details.beadhouseName}}</text>
+      <text class='state'>{{details.businessState}}</text>
+    </view>
+    <view class='price'>
+      <text class='price-num'>{{total}}</text>
+      <text class='units'>元/人/月</text>
+    </view>
+    <view class="tags">
+      <text class='tag' wx:if="{{details.aroundHospital!=null}}">医疗</text>
+      <text class='tag' wx:if="{{details.isMedical=='是'}}">医保</text>
+      <text class='tag' wx:if="{{details.cooperateHospital!=''}}">绿通</text>
+    </view>
+    <view class='caretype'>
+      <text class="fl-til">照护类型：</text>
+      <view class='type'>
+        <block wx:for="{{newServiceTypeData}}" wx:key="{{item}}">
+          <text>{{item}}</text>
+        </block>
+      </view>
+    </view>
+    <view class='introduce'>
+      <text class='til'>机构介绍</text>
+      <text class='con'>{{details.beadhouseDescribe}}</text>
+    </view>
+  </view>
+
+  <view class='lump lump-wrap'>
+    <text class='h3'>基本信息</text>
+    <view class="info-box">
+      <view class='h4'>
+        <text>机</text>
+        <text>构</text>
+        <text>地</text>
+        <text>址</text>
+      </view>
+      <text class="colon">： </text>
+      <view class="content">
+        <text>{{details.beadhouseAddress}}</text>
+        <view class='address-map' bindtap='toMaptype'>
+          <image class="xlMap" src="{{'https://api.map.baidu.com/staticimage/v2?ak=38b7fa7950ce5a308ff49f95ea19402a&center=' + details.lng + ',' + details.lat + '&width=300&height=220&zoom=13&dpiType=ph&markers=' + details.lng + ',' + details.lat}}" />
+        </view>
+      </view>
+    </view>
+    <view class="info-box">
+      <view class='h4'>
+        <text>规</text>
+        <text>模</text>
+      </view>
+      <text class="colon">： </text>
+      <view class="content">
+        <text>{{details.bedLevel}}</text>
+      </view>
+    </view>
+    <view class="info-box" wx:if="{{loginStatus}}">
+      <view class='h4'>
+        <text>开</text>
+        <text>业</text>
+        <text>时</text>
+        <text>间</text>
+      </view>
+      <text class="colon">： </text>
+      <view class="content">
+        <text>{{details.beadhouseOpentime}}</text>
+      </view>
+    </view>
+    <view class="info-box">
+      <view class='h4'>
+        <text>服</text>
+        <text>务</text>
+        <text>对</text>
+        <text>象</text>
+      </view>
+      <text class="colon">： </text>
+      <view class="content">
+        <text>{{details.serviceObjectRemark}}</text>
+      </view>
+    </view>
+    <view class="info-box" wx:if="{{loginStatus}}">
+      <view class='h4'>
+        <text>机</text>
+        <text>构</text>
+        <text>性</text>
+        <text>质</text>
+      </view>
+      <text class="colon">： </text>
+      <view class="content">
+        <text>{{details.beadhouseNature}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='lump lump-wrap signIn' wx:if="{{!loginStatus}}">
+    <view class='welcom'>欢迎您，注册、登录</view>
+    <view class='cont'>
+      <text>登录后您可以</text>
+      <text>了解每个机构的价格明细、收藏</text>
+    </view>
+    <view class='signIn-btn' catchtap='gotoLogin'>
+      <image src='/images/login_btn_bg.png'></image>
+      <text class='word'>注册</text>
+    </view>
+  </view>
+
+  <view class='lump lump-wrap housetypes'>
+    <text class='h3'>房型</text>
+    <view class='room-types'>
+      <block wx:for="{{details.houseType}}" wx:key="houseTypeId">
+        <view class='room'>
+          <text class="roomtype-til {{index!=details.houseType.length-1?'valLine':''}}">{{item.houseType}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='lump lump-wrap' style='margin-top:0;padding-top:0;' wx:if="{{loginStatus}}">
+    <text class='h3' style='margin-top:40rpx;'>费用明细</text>
+    <view class="shadow-box cost-breakdown" wx-if="{{bedNumTotal!=0}}">
+      <view class='top'>
+        <view>
+          <text>如按房间收费</text>
+        </view>
+        <view class="operat-instruction">
+          <text>将房间费折算不同房间下的床位费</text>
+          <text class="em">元 /人 /月</text>
+        </view>
+      </view>
+      <view class='bottom boldTil'>
+        <text class='price-til'>床位费</text>
+        <text class='num'>{{beadhouseBedCost}}</text>
+      </view>
+    </view>
+    <view class='shadow-box' wx-if="{{nurseTotal!=0}}">
+      <view class='price-em'>
+        <text class="em">元 /人 /月</text>
+      </view>
+      <view class='boldTil'>
+        <text class='price-til'>护理费</text>
+        <text class='num'>{{nursingCost}}</text>
+      </view>
+      <view class='boldTil'>
+        {{details.nursingCostRemark}}
+      </view>
+    </view>
+    <view class='shadow-box' wx-if="{{mealTotal!=0}}">
+      <view class='price-em'>
+        <text class='em'>元 /人 /月</text>
+      </view>
+      <view class='boldTil'>
+        <text class='price-til'>餐费</text>
+        <text class='num'>{{beadhouseMeals}}</text>
+      </view>
+    </view>
+    <view class='shadow-box shadow-box-pink' wx-if="{{details.beadhouseDepositRemark!=''}}">
+      <view class='boldTil'>
+        <text class='price-til'>{{details.beadhouseDeposit}}</text>
+        <text class='num'>{{details.beadhouseDepositRemark}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='lump lump-wrap' wx:if="{{loginStatus}}">
+    <text class='h3'>医疗配套情况</text>
+    <view class='tab-col'>
+      <text>自有医疗</text>
+      <text class='td'>{{details.isMedical}}</text>
+    </view>
+    <view class='tab-col'>
+      <text>周边三公里内医疗配套</text>
+      <text class='td'>{{details.aroundHospital}}</text>
+    </view>
+    <view class='tab-col'>
+      <text>绿色通道</text>
+      <text class='td'>{{details.cooperateHospital}}</text>
+    </view>
+  </view>
+  <view class='lump lump-wrap user-msg-wrap'>
+    <view class="grade-wrap">
+      <view class="score">{{details.star}}</view>
+      <view class="total-score">满分 5 分</view>
+      <view class="grade-num">{{details.starTotal}}个评分</view>
+    </view>
+    <text class='h3'>用户留言</text>
+    <block wx:for="{{msgboards}}" wx:key="id">
+      <view class="{{msgboards.length-1==index?'noline':''}}">
+        <template is="msgboards" data="{{...item}}"></template>
+      </view>
+    </block>
+    <view class="msg-btn">
+      <view class="more-msg-btn btn" bindtap="tomsgBoard" wx:if="{{notavailable}}">
+        查看更多用户留言
+      </view>
+      <view class="write-msg-btn btn" bindtap="towriteMsg">
+        <text wx:if="{{notavailable}}">写留言</text>
+        <text wx:if="{{!notavailable}}">期待您留下第一个留言</text>
+      </view>
+    </view>
+  </view>
+  <view class='lump lump-wrap zhu'>
+    <text>注：</text>
+    <text>所有价格及信息仅供参考，最终以养老机构或企业提供的信息为准。</text>
+  </view>
+  <view class='phone-dys'>
+    <view class="dys">
+      <view class="dys-li" style="margin-top:-2rpx;">
+        <button open-type="share" plain="true" class='share-btn'></button>
+        <view class='shareDetail'>
+          <text class="iconfont icon-fenxiang"></text>
+          <text class="share">转发</text>
+        </view>
+      </view>
+      <view class="dys-li">
+        <collect class="cover" itemId='{{postId}}' itemType='{{1}}' selected='{{isCollectioned}}'></collect>
+      </view>
+      <view class="dys-li">
+        <favour class="cover" itemId='{{postId}}' itemType='{{1}}' selected='{{isFavoured}}'></favour>
+      </view>
+
+    </view>
+    <view class="callphone" bind:tap="tocallphone">
+      <text class='btn'>立即电话咨询</text>
+    </view>
+  </view>
+  <view class='toHome' catchtap='toHome'>
+    <image src='/images/toHome-icon.png'></image>
+  </view>
+</view>
+<callphone showCallPhone="{{showPhone}}" />

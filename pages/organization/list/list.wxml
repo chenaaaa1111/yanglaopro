@@ -1,0 +1,174 @@
+<import src="../../../templates/list-item.wxml" />
+<view class='container'>
+  <view class='head-nav'>
+    <view class='search-tabbar'>
+      <view class='box-st' bindtap='toSearch'>
+        <text class="iconfont icon-sousuo"></text>
+        <input placeholder="请输入养老机构名称、地址" class="search" disabled='disabled' />
+      </view>
+      <view class="btn-area" bindtap='toMap'>
+        <text class="iconfont icon-ditu"></text>
+      </view>
+    </view>
+
+    <view class="sort-list">
+      <view class="sort" bindtap="changeBoxBtn" data-num="0">
+        <view>
+          <text class="{{area!='区域'?'current':''}}">{{area}}</text>
+          <text class="iconfont icon-sanjiao"></text>
+        </view>
+      </view>
+
+      <view class="sort" bindtap="changeBoxBtn" data-num="1">
+        <view>
+          <text class="{{pricesNum!='总费用'?'current':''}}">{{pricesNum}}</text>
+          <text class="iconfont icon-sanjiao"></text>
+        </view>
+      </view>
+
+      <view class="sort" bindtap="changeBoxBtn" data-num="2">
+        <view>
+          <text class="{{serviceTypeView!='照护类型'?'current':''}}">{{serviceTypeView}}</text>
+          <text class="iconfont icon-sanjiao"></text>
+        </view>
+      </view>
+      <view class="sort" bindtap="changeBoxBtn" data-num="3">
+        <text class="{{isShowMoreCur==true?'current':''}}">{{more}}</text>
+        <text class="iconfont icon-sanjiao"></text>
+      </view>
+    </view>
+
+    <!-- 区域 下拉框-->
+    <view class='wrap-pull-down' wx:if="{{isShowArea}}" catchtouchmove="true">
+      <view class='areas'>
+        <view class='first-area'>
+          <view class="area-item {{chooseArea1?'current':''}}" bindtap='chooseArea' data-idx="0">
+            <text>区域</text>
+          </view>
+          <view class="area-item {{chooseArea2?'current':''}}" bindtap='chooseArea' data-idx="1">
+            <text>附近</text>
+          </view>
+        </view>
+        <view class='area-name'>
+          <scroll-view scroll-y style="height: 900rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-top="{{scrollTop}}">
+            <view wx:if="{{chooseArea1}}">
+              <view class="area-item {{activeIndex==0?'current':''}}" catchtap='selectCount' data-name="区域" data-firstpy="bj">全市</view>
+              <view class="area-item {{activeIndex==index+1?'current':''}}" wx:for="{{counts}}" catchtap='selectCount' data-firstpy="{{item.firstPY}}" data-name="{{item.gscopeName}}" id="{{index+1}}">
+                <text>{{item.gscopeName}}</text>
+              </view>
+            </view>
+            <view wx:if="{{chooseArea2}}" catchtouchmove="true">
+              <view class="area-item {{activeIndexnearby==999?'current':''}}" data-sort="999" data-value="全市" data-name="附近" catchtap='selectNearby'>
+                <text>全市</text>
+              </view>
+              <block wx:for="{{nearby}}">
+                <view class="area-item {{activeIndexnearby==index?'current':''}}" data-sort="{{index}}" data-value="{{item.value}}" data-name="{{item.name}}" catchtap='selectNearby'>
+                  <text>{{item.name}}</text>
+                </view>
+              </block>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+    <!-- 总费用 下拉框-->
+    <view class='wrap-pull-down' wx:if="{{isShowFee}}" catchtouchmove="true">
+      <view class='price-lists'>
+        <view class="price-list {{activeIndex2==0?'current':''}}" bindtap='selectTotal' data-name="不限" id='0'>
+          <text>不限</text>
+        </view>
+        <block wx:for="{{allCost}}">
+          <view class="price-list {{activeIndex2==index+1?'current':''}}" bindtap='selectTotal' data-name="{{item.name}}" id='{{index+1}}'>
+            <text>{{item.name}} 元/人/月</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <!-- 照护类型下拉框-->
+    <view class='wrap-pull-down' wx:if="{{isShowServiceType}}" catchtouchmove="true">
+      <view class='care-type'>
+        <block wx:for="{{caretypes}}" wx:key="{{item.sort}}">
+          <view class="itemType {{selectIndex[index].sureid? 'active' : ''}}" bindtap="chooseType" data-idx="{{index}}">
+            <label>
+              <text>{{item.name}}</text>
+              <image src='/images/checked.png' class="hidden checked-icon"></image>
+            </label>
+          </view>
+        </block>
+        <view class='confirm-btn' bindtap='subCaretypeBtn'>
+          <text>确定</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 更多 -->
+    <view class='wrap-pull-down more-wrap-height' wx:if="{{isShowMore}}" catchtouchmove="true">
+      <view class='more-wrap'>
+        <view class='more-item'>
+          <view class='title'>房型</view>
+          <view class='context'>
+            <block wx:for="{{houseTypes}}">
+              <text bindtap="changeHouseType" class="{{houseType==index+1?'active':''}}" data-sort="{{item.sort}}">{{item.name}}</text>
+            </block>
+          </view>
+        </view>
+        <view class='medical-types'>
+          <view class='types'>
+            <view class='item'>
+              <text class="title">医保</text>
+              <text class="status {{medicalType=='m1'?'active':''}}" bindtap="changeMedical" id="m1">支持医保</text>
+            </view>
+            <view class='item'>
+              <text class="title">周边医疗机构</text>
+              <text class="status {{hasHospital=='h1'?'active':''}}" bindtap="changeHospital" id="h1">有</text>
+            </view>
+            <view class='item'>
+              <text class="title">绿色转诊通道</text>
+              <text class='status' class="status {{hasGreenChannel=='g1'?'active':''}}" bindtap="changeGreenChannel" id="g1">有</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='submit-btn'>
+        <text class='reset' bindtap='resetContext'>重置</text>
+        <text class='confirm' bindtap='confirmMore'>确定</text>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='lists-items'>
+    <view class="list-item-wraps">
+      <!-- class="{{lists.length > 2 ? 'scroll-view' : ''}}" -->
+      <!-- style="height:{{(scrollHeight-180)*2}}rpx" -->
+      <scroll-view scroll-y="true" bindscrolltoupper="refresh" bindscrolltolower="loadMore" wx:if="{{lists.length!=0}}" style="{{lists.length >= 20 ? scrollHeight : ''}}" >
+      <block wx:for="{{listsData}}" wx:key="id">
+        <template is="listItem" data="{{...item}}"></template>
+      </block>
+      </scroll-view>
+      <view class='no-house' wx:if="{{loading&&lists.length<=0}}" catchtouchmove="true">
+        <text>暂无符合相关条件的查询结果</text>
+      </view>
+    </view>
+  </view>
+  <view class='sort-btn' catchtap='showSortTap'>
+    <image src='/images/sort_icon.png'></image>
+  </view>
+  <view class="sort-wrap" catchtouchmove='true' wx:if="{{showSortwrap}}" catchtap='sortWrapTap'>
+    <view class="sort-methods" animation="{{animationData}}">
+      <view class='sort-item'>
+        <view class="method {{activeIndexSort==0?'active':''}}" catchtap='chooseSortMethod' data-sortnumber="0">默认排序</view>
+        <block wx:for="{{sortLists}}">
+          <view class="method {{activeIndexSort==index+1?'active':''}}" data-sortNumber="{{item.sort}}" catchtap='chooseSortMethod'>
+            {{item.name}}
+            <text wx:if="{{item.sort==1}}" class="iconfont icon-down sort-token"></text>
+            <text wx:if="{{item.sort==2}}" class="iconfont icon-up sort-token"></text>
+            <text wx:if="{{item.sort==3}}" class="iconfont icon-down sort-token"></text>
+            <text wx:if="{{item.sort==4}}" class="iconfont icon-up sort-token"></text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='diasp-bg' wx:if="{{bgApcity}}" catchtouchmove="true" catchtap="onBgTap"></view>

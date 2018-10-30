@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "居家养老列表",
+    "usingComponents": {
+      "component-servicelistitem": "../../../components/servicelistitem/servicelistitem"
+    }
+}

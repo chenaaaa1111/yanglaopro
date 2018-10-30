@@ -1,0 +1,2 @@
+<!--components/webp/webp.wxml-->
+<image class="imgstyle" mode="{{mode}}" src="{{src}}" binderror="loadError"></image>

@@ -1,0 +1,21 @@
+<!--components/ordergroup/ordergroup.wxml-->
+<view class="default-list ul show">
+    <view wx:for="{{options}}" wx:key="id" data-value="{{item.value}}" 
+  data-id="{{item.id}}" bindtap="onItemTap" class="li col black">
+      <text wx:if="{{item.selected}}" class="red">{{item.label}}</text>
+      <text wx:else >{{item.label}}</text>
+      <view wx:if="{{!item.selected&&(item.value==='SalePriceDesc'||item.value==='GareaDesc'||item.value==='UnitSalePriceDesc')}}" class="order-icon">
+        <i class="iconfont icon-down"></i>
+      </view>
+      <view wx:elif="{{!item.selected&&(item.value==='SalePrice'||item.value==='Garea'||item.value==='UnitSalePrice')}}" class="order-icon">
+      <i class="iconfont icon-up"></i>
+      </view>
+      <view wx:elif="{{item.selected&&(item.value==='SalePriceDesc'||item.value==='GareaDesc'||item.value==='UnitSalePriceDesc')}}" class="order-icon">
+        <i class="iconfont icon-down red"></i>
+      </view>
+      <view  wx:elif="{{item.selected&&(item.value==='SalePrice'||item.value==='Garea'||item.value==='UnitSalePrice')}}" class="order-icon">
+      <i class="iconfont icon-up red"></i>
+      </view>
+      <text class="ivm"></text>
+    </view>
+</view>

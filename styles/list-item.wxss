@@ -1,0 +1,141 @@
+.list-item {
+  background-color: #fff;
+  border-bottom: 1rpx solid #eee;
+  padding: 56rpx 0 20rpx;
+  display: flex;
+  display: -webkit-flex;
+}
+
+.item-image {
+  width: 240rpx;
+  height: 180rpx;
+  margin: 0 30rpx;
+  flex: 0 none;
+  position: relative;
+}
+
+.play-icon {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -30rpx;
+  margin-left: -30rpx;
+}
+
+.scene {
+  width: 40rpx;
+  height: 26rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.item-content {
+  flex: 1;
+}
+
+.house-details {
+  padding-right: 30rpx;
+}
+
+.house-image {
+  width: 240rpx;
+  height: 180rpx;
+}
+
+.house-title {
+  font-size: 36rpx;
+  color: #4a4a4a;
+  line-height: 1.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 800;
+}
+
+.house-address {
+  color: #9b9b9b;
+  font-size: 26rpx;
+  line-height: 44rpx;
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.house-name {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.total-price {
+  color: #e2594a;
+  font-size: 20rpx;
+  text-align: right;
+}
+
+.span {
+  margin-right: 13rpx;
+}
+
+.price {
+  color: #f33;
+  font-size: 22rpx;
+}
+
+.price-value {
+  font-size: 34rpx;
+  font-weight: bold;
+  padding-right: 10rpx;
+}
+
+.price-unit {
+  font-size: 24rpx;
+}
+
+.tag {
+  border: 1px solid #4a90e2;
+  line-height: 1.8;
+  padding: 0 15rpx;
+  font-size: 22rpx;
+  color: #4a90e2;
+  margin-right: 28rpx;
+}
+
+.railway-info {
+  font-size: 24rpx;
+  color: #b2b2b2;
+  border-top: 1rpx solid #eee;
+  margin-bottom: 25rpx;
+  padding-top: 25rpx;
+}
+
+.dis-icon {
+  width: 23rpx;
+  height: 23rpx;
+  display: inline-block;
+}
+
+.house-tags {
+  margin: 8rpx 0 25rpx;
+}
+
+.caretypes {
+  color: #4a4a4a;
+  font-size: 26rpx;
+  padding: 16rpx 26rpx;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.caretype {
+  margin: 0 12rpx;
+}
+
+.status {
+  background-color: #f33;
+  padding: 2rpx 16rpx;
+  color: #fff;
+  font-size: 22rpx;
+}

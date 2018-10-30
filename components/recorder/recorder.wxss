@@ -1,0 +1,52 @@
+/* components/recorder/recorder.wxss */
+@import '/styles/svgs.wxss';
+.mask{
+  position:fixed;
+  left:0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.speech-btn .icon-yuyin{
+  font-size: 50rpx;
+  color:#FF3333;
+}
+.speech{
+  width:580rpx;
+  height:560rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  margin: auto auto;
+  z-index: 999;
+  box-shadow: 0 5px 20px 0 rgba(0,0,0,0.05);
+  border-radius: 10rpx;
+}
+
+.speech .icon-yuyin1{
+  font-size: 80rpx;
+  color:#fff;
+}
+
+.speech .bg-circle{
+  width: 280rpx;
+  height: 280rpx;
+  margin:86rpx auto;
+  background-color:#F7B579;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 280rpx;
+}
+
+.speech .tips{
+  font-size: 44rpx;
+  color:#4A4A4A;
+  height: 108rpx;
+  line-height: 108rpx;
+  border-top:1rpx solid #eee;
+  text-align: center;
+}

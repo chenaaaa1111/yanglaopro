@@ -1,0 +1,7 @@
+<view class="li">
+  <text>{{label}}</text>
+  <view class="li-icon">
+    <image wx:if="{{!selected}}" class="ic" src="../../../images/no_sel.png"></image>
+    <image wx:else class="ic" src="../../../images/selected.png"></image>
+  </view>
+</view>

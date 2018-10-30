@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "radiobutton":"/components/radiobutton/radiobutton",
+    "favour": "/components/favour/favour",
+    "collect": "/components/collect/collect",
+    "questionnaire": "/components/questionnaire/questionnaire",
+    "iptquestion": "/components/iptquestion/iptquestion",
+    "questionext": "/components/questionext/questionext",
+    "ordergroup": "/components/ordergroup/ordergroup",
+    "recorder": "/components/recorder/recorder"
+  }
+}

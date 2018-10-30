@@ -1,0 +1,9 @@
+<import src="../../../templates/list-item.wxml" />
+<view class="container">
+    <scroll-view class="xlListBox" scroll-y>
+        <block wx:for="{{collectionList}}" wx:key="id">
+            <template is="listItem" data="{{...item}}"></template>
+        </block>
+        <view class="xlNoDataBox" wx:if="{{xlNoDataBox}}">您暂未关注机构</view>
+    </scroll-view>
+</view>

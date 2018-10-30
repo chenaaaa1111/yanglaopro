@@ -1,0 +1,15 @@
+/* components/pricegroup/pricegroup.wxss */
+.li{
+  text-align: center;
+  font-size:28rpx;
+  line-height: 88rpx;
+  color:#2A2A00;
+  border-top:1rpx solid #eee;
+  position: relative;
+}
+.li:nth-child(1){
+  border-top:0 none;
+}
+.orange{
+  color:#E95533;
+}

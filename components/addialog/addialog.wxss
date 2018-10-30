@@ -1,0 +1,111 @@
+@import "./../../styles/svgs.wxss";
+.adDialog-container {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+.adDialog-container .ad-content {
+  width: 680rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.adDialog-container .ad-content .ad-banner {
+  width: 100%;
+  height: 800rpx;
+  /* background: #fff; */
+}
+.adDialog-container .ad-content .ad-banner image{
+  width: 100%;
+  height: 800rpx;
+}
+.adDialog-container .ad-content .close-adDialog {
+  width: 110rpx;
+  height: 110rpx;
+  margin: 40rpx auto 0;
+  background:#fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adDialog-container .ad-content .close-adDialog .icon-close {
+  font-size: 55rpx;
+  color:#0d0d0d;
+}
+
+/* 动画 */
+
+.myBounceInDown {
+  -webkit-animation: myBounceInDown 1.2s;
+  animation: myBounceInDown 1.2s;
+}
+
+@keyframes myBounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-50%, -500%, 0);
+    transform: translate3d(-50%, -500%, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-50%, -45%, 0);
+    transform: translate3d(-50%, -45%, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-50%, -53%, 0);
+    transform: translate3d(-50%, -53%, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(-50%, -48%, 0);
+    transform: translate3d(-50%, -48%, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+@-webkit-keyframes myBounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-50%, -500%, 0);
+    transform: translate3d(-50%, -500%, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-50%, -45%, 0);
+    transform: translate3d(-50%, -45%, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-50%, -53%, 0);
+    transform: translate3d(-50%, -53%, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(-50%, -48%, 0);
+    transform: translate3d(-50%, -48%, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+  }
+}

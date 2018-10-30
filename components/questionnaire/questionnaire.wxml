@@ -1,0 +1,44 @@
+<!--components/questionnaire/questionnaire.wxml-->
+<wxs module='questionType'>
+  module.exports={
+    GROUP_TYPE_SINGLE:'single',
+    GROUP_TYPE_MULTI:'multi',
+    GROUP_TYPE_TEXTAREA:'textarea',
+    RADIO_TEST:'RADIO_TEST',
+    RADIO_SURVEY:'RADIO_SURVEY'
+  };
+</wxs>
+<view wx:if='{{gtype==questionType.RADIO_TEST}}' class='questionnaire test'>
+  <view class='question'>
+    <view class='title'>{{title}}</view>
+    <view wx:if='{{remark}}' class='remark'>{{remark}}</view>
+  </view>
+  <view class='answers'>
+    <radiogroup gtype='{{gtype}}' options='{{options}}' bindchange='onAnswerChanged'></radiogroup>
+  </view>
+</view>
+<view wx:elif='{{gtype==questionType.RADIO_SURVEY}}' class='questionnaire survey'>
+  <view class='question-header'>
+    <view class='title'>{{title}}</view>
+    <view wx:if='{{remark}}' class='questiontype'>{{remark}}</view>
+  </view>
+  <view class='answers' wx:if='{{type==questionType.GROUP_TYPE_SINGLE}}'>
+    <radiogroup gtype='{{gtype}}' options='{{options}}' bindchange='onAnswerChanged'></radiogroup>
+    <view wx:if='{{other}}' class='others'>
+      <text class='label'>其他：</text>
+      <input class='ipt' placeholder='点击输入其他信息' bindinput='onAnswerChanged' value='{{otherValue}}'></input>
+      <text class='ivm'></text>
+    </view>
+  </view>
+  <view class='answers' wx:elif='{{type==questionType.GROUP_TYPE_MULTI}}'>
+    <multigroup gtype='{{gtype}}' options='{{options}}' maxSelected='{{maxSelected}}' bindchange='onAnswerChanged'></multigroup>
+    <view wx:if='{{other}}' class='others'>
+      <text class='label'>其他：</text>
+      <input class='ipt' type='text' placeholder='点击输入其他信息' bindinput='onAnswerChanged' value='{{otherValue}}'></input>
+      <text class='ivm'></text>
+    </view>
+  </view>
+  <view class='answers' wx:elif='{{type==questionType.GROUP_TYPE_TEXTAREA}}'>
+    <textarea class='textarea' placeholder='请写下您的困扰/不方便' bindinput='onAnswerChanged' value='{{textareaValue}}'></textarea>
+  </view>
+</view>

@@ -1,0 +1,93 @@
+.xlServiceFilterBox {
+    width: 100%; position: relative;
+}
+.xlServiceFilterBox .xlFilterBtnBox {
+    width: 100%; height: 80rpx; display: flex; justify-content: center; 
+    box-sizing: border-box;
+}
+.xlServiceFilterBox .xlFilterBtnBox view {
+    width: 50%; height: 80rpx; line-height: 80rpx; text-align: center; font-size: 32rpx; 
+    position: relative; font-weight: 500;
+}
+.xlServiceFilterBox .xlFilterBtnBox view::after {
+    content: ''; width: 0; height: 0;
+    border-width:8rpx 8rpx 0; border-style:solid; border-color:#333 transparent transparent;
+    position: absolute; left: 50%; top: 50%; margin-left: 60rpx; margin-top: -4rpx;
+}
+.xlServiceFilterBox .xlFilterBtnBox view.xlActive {
+    color: #FF4F4F;
+}
+.xlServiceFilterBox .xlFilterBtnBox view.xlActive::after {
+    border-width:0 8rpx 8rpx; border-color:transparent transparent #FF4F4F;
+}
+.xlServiceFilterBox .xlFilterBtnBox .xlAreaBtn {
+    
+}
+.xlServiceFilterBox .xlFilterBtnBox .xlserviceBtn {
+}
+
+.xlServiceFilterBox .xlFilterListBox {
+    width: 100%; height: calc(100% - 200rpx); position: fixed; z-index: 1000; left: 0; top: 198rpx; 
+    background: rgba(0,0,0,.3); border-top: 1rpx solid #EEE;
+}
+.xlServiceFilterBox .xlFilterListBox .xlFilterBox1 {
+    width: 100%; background: #FFF;
+}
+.xlServiceFilterBox .xlFilterListBox .xlFilterBox1 .xlFilterBtn {
+    width: 100%; height: 80rpx; line-height: 80rpx; font-size: 28rpx; color: #333; text-align: center;
+    border-bottom: 1px solid #EEE;
+}
+.xlServiceFilterBox .xlFilterListBox .xlFilterBox1 .xlFilterBtn.xlActive {
+    color: #FF4F4F;
+}
+
+.xlServiceFilterBox .xlFilterListBox .xlFilterBox2 {
+    width: 100%; background: #FFF; box-sizing: border-box; padding: 30rpx;
+}
+.xlServiceFilterBox .xlFilterListBox .xlFilterBox2 .xlList {
+    display: inline-block; line-height: 60rpx; height: 60rpx; line-height: 60rpx; 
+    min-width: 30%; margin-right: 3%;
+    margin-bottom: 16rpx; border-radius: 6rpx;
+    background: #F4F4F4; color: #666; font-size: 30rpx; text-align: center;
+}
+.xlServiceFilterBox .xlFilterListBox .xlFilterBox2 .xlList.xlActive {
+    background: #FCD1CC; color: #FF4F4F;
+}
+.xlServiceFilterBox .xlFilterListBox .xlBtnBox {
+    width: 100%; height: 140rpx; box-sizing: border-box; padding: 30rpx; background: #FFF; 
+    display: flex; justify-content: space-between; margin-bottom: 200rpx; border-top: 1px solid #CCC;
+}
+.xlServiceFilterBox .xlFilterListBox .xlBtnBox view {
+    width: calc(50% - 20rpx); height: 80rpx; line-height: 80rpx; text-align: center; font-size: 36rpx;
+    box-sizing: border-box; border: 1px solid #FF4F4F;
+}
+.xlServiceFilterBox .xlFilterListBox .xlBtnBox .xlReset {
+    color: #FF4F4F;
+}
+.xlServiceFilterBox .xlFilterListBox .xlBtnBox .xlSubmit {
+    background: #FF4F4F; color: #FFF;
+}
+
+.xlFilterBox3 {
+    width: 100%; height: 46%; display: flex; justify-content: center;
+}
+.xlFilterBox3 .xlFilterBox3Left {
+    width: 33%; height: 100%; background: #F8F8F8;
+}
+.xlFilterBox3 .xlFilterBox3Left .xlFilterBox3LeftBtn {
+    width: 100%; height: 88rpx; line-height: 88rpx; 
+    text-align: center; font-size: 32rpx; color: #666; font-weight: 500;
+}
+.xlFilterBox3 .xlFilterBox3Left .xlFilterBox3LeftBtn.xlActive {
+    background: #FFF;
+}
+.xlFilterBox3 .xlFilterBox3Right {
+    width: 67%; height: 100%; background: #FFF;
+}
+.xlFilterBox3 .xlFilterBox3Right .xlFilterBtn {
+    width: 100%; height: 88rpx; line-height: 88rpx; font-size: 32rpx; color: #666; text-align: center;
+    border-bottom: 1px solid #EEE; font-weight: 500;
+}
+.xlFilterBox3 .xlFilterBox3Right .xlFilterBtn.xlActive {
+    color: #FF4F4F;
+}

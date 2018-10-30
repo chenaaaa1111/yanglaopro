@@ -1,0 +1,50 @@
+<!--pages/news/index.wxml-->
+<view class="container">
+  <view class='headView'>
+      <view class='seachGroup'>
+        <view class='inputGroup'>
+              <navigator url='../../search/search?seachType=3' >
+                <input class='seachInput' 
+                      bindconfirm="gotoList" disabled='disabled' placeholder='请输入要了解的乐养生活信息'   bindinput="oninput"  value="{{seachValue}}" />
+              </navigator>    
+                <!-- <image  class='seach_Icon' data-keyWords="{{keyWords}}"  src='./../../../images/search@2x.png' bindtap='gotoList'></image>  -->
+                <text class='iconfont seach_Icon icon-sousuo' ></text>
+                <image wx:if="{{isnoNull}}" class='cance_icon' bindtap='clearInput'  src='./../../images/delete.png'></image> 
+        </view>
+          
+   </view>
+      <view class='seachList'>
+            <view wx:for="{{seachItem}}" wx:key="{{item.id}}" id="{{item.id}}" 
+            bindtap='goToItem'
+            class='seachItem'>
+                  {{item.beadhouseName?item.beadhouseName:''}}
+                  {{item.beadServiceName?item.beadServiceName:''}}
+                  {{item.newsTitle?item.newsTitle:''}}          
+            </view>
+      </view>  
+    <scroll-view scroll-x  class="header"        scroll-into-view="{{toView}}">
+        <view wx:for="{{newsTypes}}" id="{{'s'+item.id}}" wx:key="{{item.id}}" class="{{selected==item.id? 'newsItem active': 'newsItem'}}" data-current="{{item.id}}" data-title="{{item.columnName}}"   bindtap="changeActive">
+                  {{item.columnName}}
+        </view>   
+    </scroll-view>
+  </view>
+    <scroll-view class="lists" scroll-y  lower-threshold="{{50}}"                    style="height:100%"bindscrolltolower="scrolltolowerHandle">
+        <view class="newsConten">
+            <view wx:for="{{newList}}" wx:key="{{item.id}}" bindtap="gotoItem" class="card" id="{{item.id}}">       
+              <view class='cardLeft'>
+                <view class='title'>              
+                    {{item.newsTitle?item.newsTitle:''}}
+                </view>
+                <view class="desc">{{item.newsSubtitle?item.newsSubtitle:''}}</view>
+                <view class="date">{{item.createtime?item.createtime:''}}</view>
+              </view>  
+              <view class='cardRight'>
+                  <image    
+                  src='{{item.imgUrl}}'></image>
+              </view>
+          </view>       
+        </view>
+    </scroll-view>
+</view>
+
+

@@ -1,0 +1,58 @@
+<view bindtap='hideText'>
+      <view class='seachContainer'>
+    <view class='title'>
+        <view  class='tit'>
+        <text id='1' class="{{seachtype==1?'tit active':'tit'}}"
+         bindtap='chSeach' data-placehold='请输入机构养老名称、地址'>机构养老</text> </view> 
+        <view class='tit'><text bindtap='chSeach' bindtap='chSeach' id='2'
+        class="{{seachtype==2?'active':''}}" data-placehold='请输入居家养老名称、地址'>居家养老</text></view>
+        <view class='tit' id='3'><text bindtap='chSeach' id='3'
+        class="{{seachtype==3?'active':''}}"  data-placehold='请输入要了解的乐养生活信息'>乐养生活</text></view>
+     </view>    
+</view>
+<!-- <view class="{{array.isHas(1)}}">111</view> -->
+<view class='seachGroup'>
+          <view class='inputGroup' bindtap='groptap'>
+          <view class='traanle' wx:if="{{showtext}}">
+              <view class='triangle_up'>            
+              </view>
+              <view class='line'>              
+              </view>
+          </view> 
+          <view class='vedio' wx:if="{{showtext}}">点下,试试语音输入吧</view>
+              <input   focus="{{focus}}" class="{{focus?'seachInput focus':'seachInput'}}"  auto-focus="true"  adjust-position="false" bindblur="blurhandle" bindfocus="focusHandle"
+  bindconfirm="gotoList" placeholder='{{placehold}}'   bindinput="oninput"  value="{{seachValue}}" >{{seachValue}}</input>
+              <text class='conce' bindtap='goahead'>搜索</text>
+              <text class='iconfont seach_Icon icon-sousuo' ></text>
+              <i bindtap="clearInput" class='iconfont icon-close cance_icon'></i>
+              <view class='recordDiv' >
+                <view class='speech'>
+                <recorder bindstart='speechStart' bindend='speechEnd' data-test='1'></recorder>
+                </view>   
+              </view> 
+          </view>  
+       
+ </view>
+   <view class='seachList'>
+           <view wx:for="{{seachItem}}" wx:key="{{item.id}}"  id="{{item.id}}" 
+           bindtap='goToItem' data-value="{{item.beadhouseName?item.beadhouseName:''}}{{item.beadServiceName?item.beadServiceName:''}}{{item.newsTitle?item.newsTitle:''}}"
+           class='seachItem'>
+                {{item.beadhouseName?item.beadhouseName:''}}
+                {{item.beadServiceName?item.beadServiceName:''}}
+                {{item.newsTitle?item.newsTitle:''}}           
+           </view>
+  </view>
+  <view  class='seachList abs' wx:if="{{seachtype!=3&&!isnoNull}}">
+      <view class='historyTitle'>
+          历史搜索
+      </view>
+      <view class='historyContent' >
+          <view wx:for="{{history}}" wx:key="{{item.id}}" data-value="{{item.value}}" id="{{item.id}}" 
+           bindtap='hisGotoList'
+           class='seachhistoryItem'>
+                {{item.id?item.id:''}}
+                {{item.value?item.value:''}}
+      </view>
+      </view>
+  </view>
+</view>

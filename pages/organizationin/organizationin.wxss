@@ -1,0 +1,17 @@
+
+.xlTtitle {
+    width: 100%; height: 50px; line-height: 50px; margin-top: 60px; margin-bottom: 20px;
+    font-size: 22px; color: #4A4A4A; text-align: center;
+} 
+
+.xlMenuBox {
+    width: 100%; display: flex; justify-content: center; padding: 10px 0;
+}
+
+.xlMenuBox .xlMenyBtn {
+    width: 480rpx; height: 66rpx; line-height: 66rpx; border-radius: 66rpx; border: 2px solid #FF3333;
+}
+
+.xlMenuBox .xlMenyBtn .xlText {
+    width: 100%; height: 100%; font-size: 36rpx; color: #FF3333; text-align: center;
+}

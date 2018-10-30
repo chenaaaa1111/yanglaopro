@@ -1,0 +1,22 @@
+<view class="container">
+    <view class="xlTopSearchBox">
+        <view class="xlTopSearch">
+            <view class="xlSearchBtn" bindtap='xlGoSearch'>
+                <!-- <image class="xlSearchIcon" src='/images/search@2x.png'></image> -->
+                <icon class="xlSearchIcon iconfont icon-sousuo" />
+                {{keywords || '请输入居家养老名称、地址'}}
+            </view>
+            <view class="xlMapIconBox" bindtap='xlGoMap'>
+                <!-- <image class="xlMapIcon" src='/images/icon-address.png'></image> -->
+                <icon class="xlMapIcon iconfont icon-ditu" />
+            </view>
+        </view>
+        <component-servicefilter bindcustomevent="startSearch"></component-servicefilter>
+    </view>
+    <scroll-view scroll-y class="xlListBox" bindscrolltolower="xlBindscrolltolower">
+        <component-servicelistitem wx:for="{{ServiceList}}" wx:key="{{index}}" iteminfo="{{item}}"></component-servicelistitem>
+        <view class='no-data' wx:if="{{noData}}">
+            <text>暂无符合相关条件的查询结果</text>
+        </view>
+    </scroll-view> 
+</view>

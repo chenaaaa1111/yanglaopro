@@ -1,0 +1,139 @@
+<!--pages/index/index.wxml-->
+<import src="./../../templates/list-item.wxml" />
+<view class="container" wx:if="{{DictInfosloadOver}}">
+  <view class="header-map">
+    <view class="head-content" bindtap="toMap">
+      <view class="ad-title">
+        <view class="ad-name">
+          <view class="search" catchtap="toSearch">
+            您想在哪里养老？
+            <text class="iconfont icon-sousuo"></text>
+          </view>
+        </view>
+        <view class="ad-wrap">
+          <view class="ad-slogan">
+            <text class="cn">心养老 新生活</text>
+            <text class="en">New Lifestyle</text>
+          </view>
+          <view class="phone-num">
+            <text class="phone">咨询电话</text>
+            <text class="num">010-6588 3352</text>
+          </view>
+        </view>
+      </view>
+      <view class="search-map">
+        <text class="iconfont icon-ditu"></text>
+        <view class="word-explain">
+          <text>地图</text>
+          <text>搜索</text>
+        </view>
+      </view>
+      <view class="home-bg">
+        <image src="/images/home-bg.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="nav-wrap">
+    <view wx:if="{{DictInfosloadOver}}">
+      <view class="nav-bar">
+        <view class="nav-row">
+          <view class="nav-col">
+            <navigator open-type='navigate' url='/pages/organization/list/list'>
+              <image src="/images/home-org-icon.png" />
+            </navigator>
+          </view>
+          <view class="organization">
+            <block wx:for="{{caretypes}}" wx:key='id'>
+              <text bindtap="tolistType" data-sort="{{item.sort}}" data-name="{{item.name}}">{{item.name}}</text>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="nav-bar">
+        <view class="nav-row">
+          <view class="nav-col">
+            <navigator open-type='navigate' url='/pages/services/list/list?serviceType=10000'>
+              <image src="/images/home-family-icon.png" />
+            </navigator>
+          </view>
+          <view class="organization">
+            <block wx:for="{{lives}}" wx:key="{{item.id}}">
+              <text bindtap="toservicelist" data-postid="{{item.id}}">{{item.value}}</text>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="nav-bar">
+        <view class="nav-row">
+          <view class="nav-col">
+            <navigator open-type='navigate' url='/pages/news/list/list'>
+              <image src="/images/home-live-icon.png" />
+            </navigator>
+          </view>
+          <view class="organization">
+            <block wx:for="{{oldlifes}}" wx:key="{{item.id}}">
+              <text data-postid="{{item.id}}" bindtap="tolife">{{item.caption}}</text>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="shortcut">
+    <view class="short-con">
+      <navigator class='quick-nav' open-type='navigate' url='/pages/quicksearch/quicksearch'>
+        <view class="content">
+          <text class="iconfont icon-zhinengsousuo"></text>
+          需求定制
+        </view>
+      </navigator>
+    </view>
+    <view class="short-con to-call" bind:tap="tocallphone">
+      <text class="iconfont icon-dianhua"></text>
+      一键呼叫
+    </view>
+  </view>
+  <!-- <view class="activity-theme-wrap">
+    <view class="tit">关爱认知症</view>
+    <view class="activity-theme">
+      <navigator open-type='navigate' url='/pages/active/alzheimer/alzheimer'>
+        <image src="../../images/homebanner@2x.png"></image>
+      </navigator>
+    </view>
+  </view> -->
+  <!-- <swiper class='ad-swiper' indicator-dots='{{true}}' indicator-color='rgba(204,204,204,100)' indicator-active-color='#FF3333'>
+    <swiper-item class='ad-swiper-item' wx:for='{{adImages}}' wx:key='id'>
+      <navigator open-type='navigate' url='/pages/organization/details/details?id={{item.id}}'>
+        <image class='ad-img' mode='aspectFill' src='{{item.imgUrl}}'></image>
+      </navigator>
+    </swiper-item>
+  </swiper> -->
+  <view>
+    <view class='block-title'>
+      <!-- <view class='line vm'></view> -->
+      <view class='block-txt vm'>周边养老机构</view>
+      <view class='ivm'></view>
+    </view>
+    <block wx:for="{{aroundList}}" wx:key="id">
+      <template is='listItem' data='{{...item}}'></template>
+    </block>
+  </view>
+  <view class="active-wrap-bottom">
+    <navigator open-type='navigate' url='/pages/active/questionnaire/questionnaire'>
+      <view class="question-app">
+        <view class="icon">
+          <text class="iconfont icon-plus-questionnaire"></text>
+        </view>
+        <view class="con">
+          <text class="c1">北京养老地图小程序</text>
+          <text class="c2">用户满意度调查</text>
+        </view>
+      </view>
+    </navigator>
+    <!-- <view class="next-con">
+      <text>敬请期待</text>
+    </view> -->
+  </view>
+</view>
+<addialog adImg_url="{{adImg_url}}" isShowAd="{{isshowAd}}" />
+<callphone showCallPhone="{{showPhone}}" />

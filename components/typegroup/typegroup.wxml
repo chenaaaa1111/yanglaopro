@@ -1,0 +1,18 @@
+<!--components/typegroup/typegroup.wxml-->
+<view class="ul">
+  <view wx:for="{{options}}" wx:key="{{value}}" class="li" data-value="{{item.value}}" 
+  data-id="{{item.id}}" bindtap="onItemTap">
+    <block wx:if="{{item.selected}}">
+      <text class="red">{{item.label}}</text>
+      <view class="li-icon">
+        <image class="ic" src="../../images/selected.png"></image>
+      </view>
+    </block>
+    <block wx:else>
+      <text>{{item.label}}</text>
+      <view class="li-icon">
+        <image class="ic" src="../../images/no_sel.png"></image>
+      </view>
+    </block>
+  </view>
+</view>

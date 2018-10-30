@@ -1,0 +1,7 @@
+<!--components/link/link.wxml-->
+<view>
+  <block wx:for="{{frags}}" wx:key="index">
+  <navigator wx:if="{{item.urlmatch}}" open-type="navigate" url="/pages/wshare/wshare?return_url={{item.url}}" class="link">{{item.text}}</navigator>
+  <text class="text" wx:else>{{item.text}}</text>
+  </block>
+</view>

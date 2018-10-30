@@ -1,0 +1,13 @@
+<view>
+  <view class="xlTtitle">请选择您的机构类型</view>
+  <view class="xlMenuBox">
+    <view class="xlMenyBtn" data-type="1" bindtap="gotoOrganizationIn">
+      <view class="xlText">养老机构/养老院</view>
+    </view>
+  </view>
+  <view class="xlMenuBox">
+    <view class="xlMenyBtn" data-type="2" bindtap="gotoOrganizationIn">
+      <view class="xlText">社区/居家/服务机构</view>
+    </view>
+  </view>
+</view>

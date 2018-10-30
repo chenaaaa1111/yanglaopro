@@ -1,0 +1,12 @@
+/* components/link/link.wxss */
+.link{
+  /* text-decoration:underline; */
+  display: inline;
+  font-size: 28rpx;
+  color: #0C6EE2; 
+}
+.text{
+  /* color:#fff; */
+  display: inline;
+  font-size: 28rpx;
+}

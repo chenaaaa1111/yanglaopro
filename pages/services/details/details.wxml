@@ -1,0 +1,146 @@
+<import src="../../../templates/msg-board.wxml" />
+<scroll-view scroll-y class="container">
+  <view class="xlSwiperBox">
+    <image src="{{ServiceData.imgUrl}}" class="xlImage" />
+  </view>
+  <view class="xlTitleBox">
+    <view class="xlTitle">
+      {{ServiceData.beadServiceName}}
+    </view>
+  </view>
+  <view class="xlMiddleBox">
+    <view class="xlTitle">
+      基本信息
+    </view>
+    <view class="xlItemBox">
+      <view class="xlLeftBox">
+        <text class="w4 box">机构地址</text>
+        <text class="colon">:</text>
+      </view>
+      <view class="xlRightBox">
+        {{ServiceData.beadServiceName}}
+      </view>
+    </view>
+    <view class="xlItemBox">
+      <view class="xlLeftBox">
+
+      </view>
+      <view class="xlRightBox">
+        <!-- <map class="xlMap" markers="{{markers}}" longitude="{{markers[0].longitude}}" latitude="{{markers[0].latitude}}" scale="{{scale}}"/> -->
+        <image class="xlMap" bindtap="xlGoToMap" src="{{'https://api.map.baidu.com/staticimage/v2?ak=38b7fa7950ce5a308ff49f95ea19402a&center=' + markers[0].longitude + ',' + markers[0].latitude + '&width=300&height=220&zoom=13&dpiType=ph&markers=' + markers[0].longitude + ',' + markers[0].latitude}}"
+        />
+      </view>
+    </view>
+    <view class="xlItemBox">
+      <view class="xlLeftBox">
+        <text class="w3 box">运营商</text>
+        <text class="colon">:</text>
+      </view>
+      <view class="xlRightBox">
+        {{ServiceData.beadServiceOperator}}
+      </view>
+    </view>
+    <view class="xlItemBox">
+      <view class="xlLeftBox">
+        <text class="w4 box">项目面积</text>
+        <text class="colon">:</text>
+      </view>
+      <view class="xlRightBox">
+        {{ServiceData.beadServiceArea ? ServiceData.beadServiceArea + '平米' : '暂无'}}
+      </view>
+    </view>
+    <view class="xlItemBox">
+      <view class="xlLeftBox w3">
+        <text class="w3 box">床位数</text>
+        <text class="colon">:</text>
+      </view>
+      <view class="xlRightBox">
+        {{ServiceData.beadServiceBednumber + ' 张'}}
+      </view>
+    </view>
+    <view class="xlItemBox">
+      <view class="xlLeftBox">
+        <text class="w4 box">开业时间</text>
+        <text class="colon">:</text>
+      </view>
+      <view class="xlRightBox">
+        {{ServiceData.serviceOpentime}}
+      </view>
+    </view>
+  </view>
+  <view class="xlBottomBox">
+    <view class="xlTitle">
+      服务内容及报价
+    </view>
+    <view class="xlItemBox" wx:for="{{ServiceData.serviceContent}}" wx:key="index">
+      <view class="xlTopBox2">
+        <view class="xlLeftBox">
+          伙食费
+        </view>
+        <view class="xlRightBox">
+          {{item.serviceStandard}}
+        </view>
+      </view>
+      <view class="xlBottomBox2">
+        <view class="xlLeftBox">
+          内容及标准：
+        </view>
+        <view class="xlRightBox">
+          {{item.serviceProject}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='lump lump-wrap user-msg-wrap'>
+    <view class="grade-wrap">
+      <view class="score">{{ServiceData.star}}</view>
+      <view class="total-score">满分 5 分</view>
+      <view class="grade-num">
+        {{ServiceData.starTotal}}个评分
+      </view>
+    </view>
+    <text class='h3'>用户留言</text>
+    <block wx:for="{{msgboards}}" wx:key="id">
+      <view class="{{msgboards.length-1==index?'noline':''}}">
+        <template is="msgboards" data="{{...item}}"></template>
+      </view>
+    </block>
+    <view class="msg-btn">
+      <view class="more-msg-btn btn" bindtap="tomsgBoard" wx:if="{{notavailable}}">查看更多用户留言</view>
+      <view class="write-msg-btn btn" bindtap="towriteMsg">
+        <text wx:if="{{notavailable}}">写留言</text>
+        <text wx:if="{{!notavailable}}">期待您留下第一个留言</text>
+      </view>
+    </view>
+  </view>
+  <view class="xlSubmitBox">
+    <view class="xlAttentionBox">
+      所有价格及信息仅供参考，最终以养老机构或企业提供的信息为准。
+    </view>
+  </view>
+  <view class='toHome' catchtap='toHome' wx:if="{{showShareApp}}">
+    <image src='/images/toHome-icon.png'></image>
+  </view>
+</scroll-view>
+<view class='phone-dys'>
+  <view class="dys">
+    <view class="dys-li" style="margin-top:-2rpx;">
+      <button open-type="share" plain="true" class='share-btn'></button>
+      <view class='shareDetail'>
+        <text class="iconfont icon-fenxiang"></text>
+        <text class="share">转发</text>
+      </view>
+    </view>
+    <view class="dys-li">
+      <collect class="cover" itemId='{{ServiceData.id}}' label='收藏' itemType='{{2}}' selected='{{isCollectioned}}'></collect>
+    </view>
+    <view class="dys-li">
+      <view class="cover" wx:if="{{showcover}}" bindtap="oncover"></view>
+      <favour class="cover" itemId='{{ServiceData.id}}' itemType='{{2}}' selected='{{isFavoured}}'></favour>
+    </view>
+  </view>
+  <view class="callphone" bind:tap="xlTel">
+    <text class='btn'>立即电话咨询</text>
+  </view>
+</view>
+<callphone showCallPhone="{{showPhone}}" />

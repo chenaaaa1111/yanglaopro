@@ -1,0 +1,65 @@
+<view class="container">
+    <map class="map" wx:if="{{mapType == 1}}" markers="{{markers}}" longitude="{{lng}}" latitude="{{lat}}" scale="{{scale}}" show-location="true" bindmarkertap="markertap" bindregionchange="regionchange" bindtap="mapbindtap">
+        <cover-view class="xlTopSearchBox">
+            <cover-view class="xlTopSearch">
+                <cover-view class="xlSearchBtn" bindtap='xlGoSearch'>
+                    <cover-view>请输入养老机构名称、地址 </cover-view>
+                </cover-view>
+                <cover-view class="xlSearchIconBox" bindtap='xlGoMap'>
+                    <cover-image class="xlSearchIcon" src='/images/search@2x.png' />
+                </cover-view>
+                <cover-view class="xlMapIconBox" bindtap='xlGoMap'>
+                    <cover-view class="xlMapIcon iconfont icon-sousuo"></cover-view>
+                </cover-view>
+            </cover-view>
+        </cover-view> 
+        <cover-view class="xlLocationBtn" bindtap="xlGotoLocation"><cover-image class="xlImg" src="../../images/map_location.png" lazy-load="{{true}}" /></cover-view>
+        <cover-view class="xlDetailBox1" wx:if="{{detailData}}" bindtap="xlGoOrgDetail">
+            <cover-view class="xlTopBox">
+                <cover-view class="xlImgBox">
+                    <cover-image class="xlDetailImg" src="{{detailData.pensionImages[0].imgUrl}}" />
+                </cover-view>
+                <cover-view class="xlTextBox">
+                    <cover-view class="xlTitle">{{detailData.beadhouseName}}</cover-view>
+                    <cover-view class="xlPosition">{{detailData.beadhouseAddress}}</cover-view>
+                    <cover-view class="xlPrise">{{(detailData.beadhouseCostRangeMin || 0) + ' - ' + (detailData.beadhouseCostRangeMax || 0)}}<cover-view class="eve">元/人/月</cover-view></cover-view>
+                    <cover-view class="xlListBox">
+                        <cover-view class="xlList" wx:if="{{detailData.beadhouseHospital}}">医疗</cover-view>
+                        <cover-view class="xlList" wx:if="{{detailData.isMedical == '是'}}">医保</cover-view>
+                        <cover-view class="xlList" wx:if="{{detailData.cooperateHospital}}">绿通</cover-view>
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+            <cover-view class="xlBottomInfoBox">
+                <cover-view class="xlTextInfo">照护类型：{{detailData.beadhouseServiceType}}</cover-view>
+                <cover-view class="xlRightBtn" wx:if="{{detailData.businessState}}">{{detailData.businessState}}</cover-view>
+            </cover-view>
+        </cover-view>
+    </map>
+    <map class="map" wx:if="{{mapType == 2}}" id="map" markers="{{markers}}" longitude="{{lng}}" latitude="{{lat}}" scale="{{scale}}" show-location="true" bindmarkertap="markertap" bindregionchange="regionchange" bindtap="mapbindtap">
+        <cover-view class="xlTopSearchBox">
+            <cover-view class="xlTopSearch">
+                <cover-view class="xlSearchBtn" bindtap='xlGoSearch'>
+                    <cover-view>请输入养老服务名称、地址</cover-view>
+                </cover-view>
+                <cover-view class="xlSearchIconBox" bindtap='xlGoMap'>
+                    <cover-image class="xlSearchIcon" src='/images/search@2x.png' />
+                </cover-view>
+                <cover-view class="xlMapIconBox" bindtap='xlGoMap'>
+                    <cover-view class="xlMapIcon iconfont icon-sousuo"></cover-view>
+                </cover-view>
+            </cover-view>
+        </cover-view>
+        <cover-view class="xlLocationBtn" bindtap="xlGotoLocation"><cover-image class="xlImg" src="../../images/map_location.png" lazy-load="{{true}}" /></cover-view>
+        <cover-view class="xlDetailBox2" wx:if="{{detailData}}" bindtap="xlGoServiceDetail">
+            <cover-view class="xlImgBox">
+                <cover-image class="xlDetailImg" src="{{detailData.imgUrl}}" />
+            </cover-view>
+            <cover-view class="xlTextBox">
+                <cover-view class="xlTitle">{{detailData.beadServiceName}}</cover-view>
+                <cover-view class="xlCompany">{{detailData.beadServiceRegion + detailData.beadServiceAddress}}</cover-view>
+                <cover-view class="xlPosition">{{detailData.beadServiceOperator}}</cover-view>
+            </cover-view>
+        </cover-view>
+    </map> 
+</view>

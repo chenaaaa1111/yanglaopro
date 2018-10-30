@@ -1,0 +1,16 @@
+/* components/radiobutton/radiobutton.wxss */
+@import "/styles/global.wxss";
+@import "/styles/common.wxss";
+@import "/styles/svgs.wxss";
+.collect .icon,.favor .icon{
+  color: #4A4A4A;
+  font-size:50rpx;
+}
+.collect .icon.selected,.favor .icon.selected{
+  color: #FF3333;
+  font-size:50rpx;
+}
+.label,.label.selected{
+  font-size: 28rpx;
+  color: #4A4A4A;
+}

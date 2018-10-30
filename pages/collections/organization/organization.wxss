@@ -1,0 +1,63 @@
+@import "../../../styles/list-item.wxss";
+
+.container {
+    width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden;
+}
+.xlListBox {
+    width: 100%;
+}
+ 
+.xlDetailBox1 {
+    margin-top:54rpx; background: #FFF; position: relative;
+}
+.xlDetailBox1 .xlTopBox {
+	display:flex; flex-direction:row; padding:0 32rpx;
+}
+.xlDetailBox1 .xlTopBox .xlImgBox {
+    width:240rpx; height:180rpx; margin-right:36rpx; z-index: 2;
+}
+.xlDetailBox1 .xlTopBox .xlImgBox .xlDetailImg {
+    width: 100%; height: 100%; 
+}
+.xlDetailBox1 .xlTopBox .xlTextBox {
+    width: 470rpx; display:flex; flex-direction:column; vertical-align:middle;
+}
+.xlDetailBox1 .xlTopBox .xlTextBox .xlTitle {
+    color:#4a4a4a; font-size:30rpx; letter-spacing:0; font-weight:bold; margin-top:-6rpx;
+}
+.xlDetailBox1 .xlTopBox .xlTextBox .xlPosition {
+    font-size:24rpx; color:#9b9b9b; letter-spacing:0; line-height:34rpx; margin-top:4rpx;
+}
+.xlDetailBox1 .xlTopBox .xlTextBox .xlPrise {
+    display: inline-block; font-size:32rpx; color:#f33; letter-spacing:0; line-height:44rpx; margin-top:10rpx; font-weight:bolder;
+    position: relative;
+}
+.xlDetailBox1 .xlTopBox .xlTextBox .xlPrise text {
+    font-size: 22rpx; color: #f33; font-weight: 400;
+}
+
+.xlDetailBox1 .xlTopBox .xlTextBox .xlListBox {
+    
+}
+.xlDetailBox1 .xlTopBox .xlTextBox .xlListBox .xlList {
+    display:inline-block; width:72rpx; height:30rpx;
+	font-size:22rpx; color:#74b4eb; text-align:center; line-height:32rpx;
+	border:1px solid #74b4eb; margin-right:28rpx; margin-top: 20rpx;
+}
+
+.xlDetailBox1 .xlBottomInfoBox {
+    display:flex; flex-direction:row; width:100%; background:#f9f9f9; padding: 0 32rpx;
+	position:relative; margin-top:20rpx; border-bottom:1px solid #e6e6e6; box-sizing: border-box;
+}
+.xlDetailBox1 .xlBottomInfoBox .xlTextInfo {
+    width: 100%; height: 80rpx; line-height: 80rpx; overflow: hidden; font-size: 24rpx; color: #333;
+}
+.xlDetailBox1 .xlBottomInfoBox .xlRightBtn {
+    position:absolute; right:0px;
+	top:20rpx; background:#f33; font-size:24rpx; color:#fff;
+	padding:0px 12rpx; margin:10rpx 24rpx 0 0;
+}
+
+.xlNoDataBox {
+    width: 100%; height: 80rpx; line-height: 80rpx; margin-top: 400rpx; text-align: center;
+}

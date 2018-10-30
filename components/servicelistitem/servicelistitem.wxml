@@ -1,0 +1,10 @@
+<view class="xlDetailBox2" bindtap="xlBtnTap">
+    <view class="xlImgBox">
+        <image class="xlDetailImg" src="{{iteminfo.imgUrl}}" />
+    </view>
+    <view class="xlTextBox">
+        <view class="xlTitle">{{iteminfo.beadServiceName}}</view>
+        <view class="xlCompany">{{iteminfo.beadServiceRegion + iteminfo.beadServiceAddress}}</view>
+        <view class="xlPosition">{{iteminfo.beadServiceOperator}}</view>
+    </view>
+</view>

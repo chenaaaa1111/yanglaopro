@@ -1,0 +1,14 @@
+<view class='swiper-wrap'>
+  <swiper bindchange="durationChange">
+    <block wx:for="{{pensionImages}}" wx:key="imageId">
+      <swiper-item>
+        <image class="swiper-image" src='{{item.imgUrl}}' />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='swiper-detail'>
+    <!-- <image src='/images/Picture-64@2x.png' /> -->
+    <text class="iconfont icon-tupian"></text>
+    <text class='num'>{{curIndex}}/{{pensionImages.length}}</text>
+  </view>
+</view>

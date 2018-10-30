@@ -1,0 +1,28 @@
+<template name="msgboards">
+    <view class="user-msg-info">
+      <view class="user-info">
+        <text class="phone-num">{{phone}}</text>
+        <text class="time">{{createTime}}</text>
+        <view class="star">
+          <view class="starPIC star1" wx:for="{{star}}" wx:key="{{item.id}}">
+             <text class="iconfont icon-wuxing"></text>
+          </view>
+          <view class="starPIC star2" wx:for="{{5-star}}" wx:key="{{item.id}}">
+            <text class="iconfont icon-wuxing"></text>
+          </view>
+        </view>
+      </view>
+      <view class="msg-con">
+        <text>{{comment}}</text>
+      </view>
+      <view class="reply-wrapper" wx:if="{{replyShow}}">
+        <view class="reply-top">
+          <text class="til">昱言养老</text>
+          <text class="time">{{updateTime}}</text>
+        </view>
+        <view class="comment-content">
+          {{replyComment}}
+        </view>
+      </view>
+    </view>
+</template>

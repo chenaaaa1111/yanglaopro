@@ -1,0 +1,12 @@
+<!--components/questionext/questionext.wxml-->
+<view class='questionnaire survey'>
+  <view class='question-header'>
+    <view class='title'>{{title}}</view>
+    <view wx:if='{{remark}}' class='questiontype'>{{remark}}</view>
+  </view>
+  <view class='answers'>
+  <block wx:for='{{options}}' wx:key='qId'>
+  <iptquestion gtype='RADIO_SURVEY' type='{{item.type}}' qId='{{item.qId}}' title='{{item.title}}' remark='{{item.remark}}' options='{{item.options}}' bindchange='onAnswerChanged'></iptquestion> 
+  </block>   
+  </view>
+</view>

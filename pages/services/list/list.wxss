@@ -1,0 +1,40 @@
+.container {
+    width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden;
+}
+.xlListBox {
+    width: 100%; height: calc(100% - 200rpx); padding-top: 200rpx; overflow-y: scroll;
+}
+
+.xlTopSearchBox {
+    width: 100%; height: 200rpx; background: #FFF;
+    position: fixed; left: 0; top: 0 ; z-index: 1000;  box-shadow: 0 1px 18px #ccc;
+}
+.xlTopSearchBox .xlTopSearch {
+    width: 100%; height: 120rpx; box-sizing: border-box; padding: 20rpx 40rpx;
+}
+.xlTopSearchBox .xlTopSearch .xlSearchBtn {
+    width: calc(100% - 80rpx); height: 80rpx; position: relative; background: #F2F2F2;
+    font-size: 28rpx; color: #999; line-height: 80rpx; text-indent: 100rpx;
+}
+.xlTopSearchBox .xlTopSearch .xlSearchBtn .xlSearchIcon {
+    width: 36rpx; height: 36rpx; text-indent: 0; font-size: 44rpx;
+    position: absolute; left: 40rpx; top: 6rpx; z-index: 1003;
+}
+.xlTopSearchBox .xlTopSearch .xlMapIconBox {
+    width: 60rpx; height: 60rpx; position: absolute; top: 24rpx; right: 40rpx; z-index: 1004;
+}
+.xlTopSearchBox .xlTopSearch .xlMapIconBox .xlMapIcon {
+    width: 100%; height: 100%; float: left; font-size: 60rpx;
+}
+
+
+.no-data {
+    width: 750rpx;
+    font-size:38rpx;
+    text-align: center;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+  }

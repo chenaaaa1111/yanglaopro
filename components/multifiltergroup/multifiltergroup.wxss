@@ -1,0 +1,42 @@
+/* components/multifiltergroup/multifiltergroup.wxss */
+.group{
+  background-color: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+.group-title{
+  color:#333;
+  font-size:32rpx;
+  margin:30rpx;
+}
+
+.group-block{
+  margin:30rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+.option{
+  width:152rpx;
+  flex:0 none;
+  margin:12rpx 0;
+  margin-right: 20rpx;
+  text-align: center;
+  font-size:24rpx;
+  color:#666;
+  padding:12rpx 10rpx;
+  border-radius:5rpx;
+  background-color: #F4F4F4;
+  border: 1rpx solid #eee;
+  box-sizing: border-box;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option.selected{
+  color: #E2594A;
+  background-color:rgba(252,210,205,1);
+  border:1rpx solid rgba(252,210,205,1);
+}

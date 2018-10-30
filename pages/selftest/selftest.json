@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "自评量表",
+  "usingComponents": {
+    "questionnaire": "/components/questionnaire/questionnaire",
+        "callphone": "../../components/callphone/callphone"
+  }
+}

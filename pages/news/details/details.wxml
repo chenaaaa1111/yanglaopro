@@ -1,0 +1,17 @@
+<import src="./../../../libs/wxParse/wxParse.wxml"/>
+<view class='comment'>
+    <view class='header'>
+     <image src='./../../../images/firstImage.png' class='firimage'></image>
+        <view class="tittle"> 
+        {{newsdata.newsTitle}}</view>
+        <view class='desc'>
+        {{newsdata.newsSubtitle?newsdata.newsSubtitle:''}}
+        </view>
+        <view class='date'> <text>{{newsdata.createtime}}</text> 
+        <text class='cname'>昱言养老</text> </view>
+    </view>
+   <view class='newContent' >
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>       
+   </view>
+
+</view>

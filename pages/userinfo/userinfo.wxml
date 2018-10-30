@@ -1,0 +1,62 @@
+<!--logs.wxml-->
+<view class="container"> 
+  <view class="xlPickBox1">
+    <view class="xlTitle"><text class="xlTitleText">预定用途</text></view>
+    <view class="xlListBox">
+        <view wx:for="{{useTypeList}}" class="xlList {{userLoginInfo.useType == item ? 'xlActive' : ''}}" data-pickBoxNum="useType" data-pickListNum="{{index}}" bindtap="xlPickBox1Btn" wx:key="{{index}}">{{item}}</view>
+    </view> 
+  </view>
+  <view class="xlInputBox1">
+    <text class="xlTitle">我的姓名：</text>
+    <input class="xlInput" placeholder="请输入您的姓名" value="{{userLoginInfo.userName}}" data-xlInputBoxNum="userName" bindinput="xlInputBox1Inp"/>
+  </view>
+  <view class="xlInputBox1">
+    <text class="xlTitle">长者年龄：</text>
+    <input class="xlInput" placeholder="请输入长者年龄" value="{{userLoginInfo.age?userLoginInfo.age:''}}" data-xlInputBoxNum="age" bindinput="xlInputBox1Inp"/>
+  </view>
+  <view class="xlPickBox1">
+    <view class="xlTitle"><text class="xlTitleText">长者性别</text></view>
+    <view class="xlListBox">
+        <view wx:for="{{genderList}}" class="xlList {{userLoginInfo.gender == item ? 'xlActive' : ''}}" data-pickBoxNum="gender" data-pickListNum="{{index}}" bindtap="xlPickBox1Btn" wx:key="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <view class="xlPickBox1">
+    <view class="xlTitle"><text class="xlTitleText">健康程度</text></view>
+    <view class="xlListBox">
+        <view wx:for="{{healthDegreeList}}" class="xlList {{userLoginInfo.healthDegree == item ? 'xlActive' : ''}}" data-pickBoxNum="healthDegree" data-pickListNum="{{index}}" bindtap="xlPickBox1Btn" wx:key="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <view class="xlPickBox1">
+    <view class="xlTitle"><text class="xlTitleText">入住人数</text></view>
+    <view class="xlListBox">
+        <view wx:for="{{houseNumList}}" class="xlList {{userLoginInfo.houseNum == item ? 'xlActive' : ''}}" data-pickBoxNum="houseNum" data-pickListNum="{{index}}" bindtap="xlPickBox1Btn" wx:key="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <view class="xlPickBox1">
+    <view class="xlTitle"><text class="xlTitleText">时间范围</text></view>
+    <view class="xlListBox">
+        <view wx:for="{{serviceDateList}}" class="xlList {{userLoginInfo.serviceDate == item ? 'xlActive' : ''}}" data-pickBoxNum="serviceDate" data-pickListNum="{{index}}" bindtap="xlPickBox1Btn" wx:key="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <view class="xlInputBox1">
+    <text class="xlTitle">我的地址：</text>
+    <text class="xlInput" bindtap="showaddress">{{userLoginInfo.address || '请输入您的地址'}}</text>
+  </view>
+  <view class="xlSubmitBtn">
+    <button bindtap="xlSubmitBtnTap">保存信息</button>
+  </view>
+</view>
+
+<view class="xlAddressBox" wx:if="{{addressShow}}">
+  <view class="xlAddressCheckBox">
+    <view class="xlTitle">区域</view>
+    <view class="xlListBox">
+      <view class="xlList {{addressName == item.gscopeName ? 'xlActive' : ''}}" wx:for="{{filterAreaList}}" data-cityName="{{item.gscopeName}}" bindtap="xlAddrBtns">{{item.gscopeName}}</view>
+    </view>
+    <input class="xlInputBox" value="{{address}}" data-xlInputBoxNum="address" bindinput="xlInputAddr"/>
+    <view class="xlBtnBox">
+      <view class="xlBtn" data-save="{{0}}" bindtap="hideaddress">取消</view>
+      <view class="xlBtn xlActive" data-save="{{1}}" bindtap="hideaddress">确定</view>
+    </view>
+  </view>
+</view>

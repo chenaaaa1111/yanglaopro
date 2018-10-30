@@ -1,0 +1,74 @@
+<!--pages/test/test.wxml-->
+<view style='height:{{pageInfo.height}};overflow:{{pageInfo.overflow}}'>
+<wxs module="testData">
+module.exports={
+  title:'',
+  options:[{
+    id:'1',
+    label:'选项1',
+    value:'1',
+    selected:false
+    },{
+    id:'2',
+    label:'选项2',
+    value:'2',
+    selected:false
+  },{
+    id:'3',
+    label:'选项3',
+    value:'3',
+    selected:false
+  },{
+    id:'4',
+    label:'选项4',
+    value:'4',
+    selected:false
+  }]
+};
+</wxs>
+
+<!-- <radiobutton 
+  label='收藏'  //未选中时显示的文本
+  selectedLabel='已收藏' //选中时显示的文本
+  bindselect='onRadioButtonTap' //选择事件
+  selected='{{false}}' //是否选中，默认false
+></radiobutton>  -->
+<favour itemId='{{11}}' itemType='{{1}}' selected='{{false}}'></favour>
+<collect itemId='{{11}}' itemType='{{1}}' selected='{{false}}'></collect>
+<ordergroup options='{{testData.options}}'></ordergroup>
+  <view>
+  <!-- 
+  gtype 问题类型：RADIO_TEST自测题，RADIO_SURVEY问卷题
+  type 选项类型：single 单选，multi 多选，textarea 输入框
+  qId 问题id
+  title 问题内容
+  remark 问题备注，自测题为蓝色备注部分，问卷题为：单选，多选备注
+  options 答案选项
+  other 是否有其他选项
+  bindchange 选择发生变化时事件
+   -->
+  <view>
+      <questionnaire gtype='RADIO_TEST' type='single' qId='{{question.qId}}' title='{{question.title}}' remark='{{question.remark}}' options='{{question.options}}' bindchange='onAnswerChanged'></questionnaire>
+      <view class='continue' bindtap='stepNext'>继续</view>
+  </view>
+  <view>
+  <questionnaire gtype='RADIO_SURVEY' type='single' qId='{{question.qId}}' title='{{question.title}}' remark='{{question.remark}}' options='{{question.options}}' bindchange='onAnswerChanged'></questionnaire>
+    <view class='continue' bindtap='stepNext'>继续</view>
+  </view>
+  <view>
+  <questionnaire gtype='RADIO_SURVEY' type='multi' maxSelected='{{question.maxSelected}}' qId='{{question.qId}}' title='{{question.title}}' other='{{true}}' remark='{{question.remark}}' options='{{question.options}}' bindchange='onAnswerChanged'></questionnaire>
+    <view class='continue' bindtap='stepNext'>继续</view>
+  </view>
+    <view>
+      <questionnaire gtype='RADIO_SURVEY' type='textarea' qId='{{question.qId}}' title='{{question.title}}' remark='{{question.remark}}' options='{{question.options}}' bindchange='onAnswerChanged'></questionnaire>
+      <view class='continue' bindtap='stepNext'>继续</view>
+    </view>
+ </view>
+ <view>
+    <questionext gtype='RADIO_SURVEY' type='single' qId='{{questionextData.qId}}' title='{{questionextData.title}}' remark='{{questionextData.remark}}' options='{{questionextData.options}}' bindchange='onAnswerChanged'></questionext>
+    <view class='continue' bindtap='stepNext'>继续</view>
+ </view>
+ <view class='speech'>
+ <recorder bindstart='speechStart' bindend='speechEnd' data-test='1'></recorder>
+ </view>
+</view>

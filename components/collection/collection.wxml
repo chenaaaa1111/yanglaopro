@@ -1,0 +1,3 @@
+<view class="xlCollectionBox" bindtap="xlBtnTap">
+    <image src="{{!isCollectioned ? '../../images/collection1.png' : '../../images/collection2.png'}}" class="xlCollectionImg" />
+</view>

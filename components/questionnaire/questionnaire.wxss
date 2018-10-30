@@ -1,0 +1,75 @@
+/* components/questionnaire/questionnaire.wxss */
+@import './../../styles/common.wxss';
+.questionnaire.test{
+  margin: 66rpx 66rpx 0;
+  /* border: 1rpx solid #900; */
+}
+
+.test .title{
+  font-size: 48rpx;
+  color:#000;
+  margin: 34rpx 0;
+  text-align: center;
+  font-weight: 900;
+}
+
+.remark{
+  font-size: 44rpx;
+  color:  #2D8FFF;
+  text-align: center;
+  margin: 34rpx 0;
+  line-height: 1.5;
+}
+.question{
+  height:400rpx;
+}
+.question-header{
+  padding: 40rpx 56rpx;
+  box-shadow: 0 0 60rpx 0 rgba(0,0,0,0.20);
+}
+
+.survey .questiontype{
+  font-size: 32rpx;
+  color: #4A4A4A;
+  text-align: right;
+  line-height: 2;
+}
+
+.survey .title{
+  font-size: 44rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.survey .answers{
+  margin:46rpx 0;
+}
+
+.survey .others{
+  margin: 0 30rpx;
+  /* border:1rpx solid #900; */
+  padding: 40rpx 70rpx;
+}
+
+.survey .others .label{
+  font-size: 40rpx;
+  color: #333;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.survey .others .ipt{
+  display:inline-block;
+  vertical-align: middle;
+  color: #9B9B9B;
+  font-size: 40rpx;
+}
+
+.survey .textarea{
+  border: 1px solid #DBDBDB;
+  margin: 0 30rpx;
+  padding: 30rpx 32rpx;
+  width: 690rpx;
+  height: 480rpx;
+  box-sizing: border-box;
+}

@@ -1,0 +1,61 @@
+/* components/radiogroup/radiogroup.wxss */
+.test .ans-item{
+  font-size: 40rpx;
+  color: #000;
+  padding: 24rpx 0;
+  border: 5rpx dashed #C5E9FF;
+  border-radius: 200rpx;
+  text-align: center;
+  margin: 50rpx 0;
+  font-weight: 900;
+}
+
+.test .ans-item.selected{
+  background-color:  #C6EAFF;
+}
+
+.survey .ans-item{
+  margin: 0 30rpx;
+  /* border:1rpx solid #900; */
+  padding: 20rpx 70rpx;
+  color: #4A4A4A;
+  font-size: 40rpx;
+  /* font-weight: 900; */
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.survey .ans-item.selected{
+  background-color: #EDF0F2;
+  color: #FF3333;
+}
+
+.survey .ans-item .selector{
+  width:16rpx;
+  height:36rpx;
+  border-right: 6rpx solid #FF3333;
+  border-bottom: 6rpx solid #FF3333;
+  transform-origin: right bottom;
+  -webkit-transform-origin:  right bottom;
+  transform: rotateZ(45deg);
+  -webkit-transform: rotateZ(45deg);
+}
+
+.survey .lb-container{
+  flex:1;
+}
+
+.survey .lb-container .label{
+  font-size: 40rpx;
+  color:#4A4A4A;
+}
+
+.survey .selected .lb-container .label{
+  color:#FF3333;
+}
+
+.survey .lb-container .extra{
+  font-size: 32rpx;
+  color:#4A4A4A;
+}

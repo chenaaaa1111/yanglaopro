@@ -1,0 +1,35 @@
+@import "./../../styles/svgs.wxss";
+.swiper-wrap {
+  position: relative;
+}
+
+swiper {
+  width:750rpx;
+  height: 524rpx;
+}
+
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-detail {
+  position: absolute;
+  bottom: 20rpx;
+  right: 32rpx;
+  z-index: 9999;
+}
+
+.swiper-detail .icon-tupian {
+  font-size: 32rpx;
+  vertical-align: middle;
+  margin-right: 8px;
+  color:#fff;
+}
+
+.swiper-detail .num {
+  vertical-align: middle;
+  font-size: 24rpx;
+  color: #fff;
+  letter-spacing: 0.14px;
+}

@@ -1,0 +1,9 @@
+/**app.wxss**/
+/**app.wxss**/
+@import "./styles/common.wxss"; 
+@import "./styles/global.wxss"; 
+@import "./styles/svgs.wxss";
+page{
+	width: 100%;
+	height: 100%;
+}

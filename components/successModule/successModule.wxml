@@ -1,0 +1,9 @@
+<view class="xlSuccessModuleBox">
+    <view class="xlSuccessImg">
+        <icon class="xlImage" type="success" size="80" color="{{item}}"/>
+    </view>
+    <view class="xlText">
+        您好，您的信息我们收到
+我们会尽快与您联系！
+    </view>
+</view>

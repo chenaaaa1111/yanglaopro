@@ -1,0 +1,54 @@
+/* pages/selftest/selftest.wxss */
+.continue{
+  color: #fff;
+  background-color: #2D8FFF;
+  box-shadow: 0 14px 26px 0 rgba(45,143,255,0.30);
+  font-size: 40rpx;
+  padding: 24rpx 0;
+  border-radius: 200rpx;
+  text-align: center;
+  margin: 56rpx 76rpx;
+   /* position: absolute;  */
+  width: 600rpx;
+  height: 64rpx;
+   /* bottom: 27rpx;  */
+
+}
+.imgDoctor{
+  width: 343.2rpx;
+  height: 351.8rpx;
+  margin-left: 51rpx;
+}
+.imgContainer{
+  text-align: center;
+  padding-top: 150rpx;
+}
+.remark{
+  font-size: 44rpx;
+  color:  #2D8FFF;
+  text-align: center;
+  margin: 34rpx 0;
+  line-height: 1.5;
+  padding-left: 70rpx;
+  padding-right:70rpx;
+}
+.end{
+  margin-top: 58rpx;
+  margin-left: 6rpx;
+  font-size:40rpx;
+}
+.start{
+  margin-top: 220rpx;
+}
+.isred{
+  color: #FF3333;
+  padding: 0;
+  margin: 0;
+}
+.sugess{
+  color: #FF3333;
+}
+.phone{
+  color: #333;
+  font-weight: 900;
+}

@@ -1,0 +1,94 @@
+<view class="container" wx:if="{{pubshow==0}}">
+  <view class="startup-page">
+    <view class="til">
+      <text>北京养老地图-小程序</text>
+      <text>用户满意度调查</text>
+    </view>
+    <view class="bg-pic">
+      <image src="/images/active-icon@2x.png"></image>
+    </view>
+    <view class="bottom-btn">
+      <view class="btn" bindtap="onStartup">开始答题</view>
+    </view>
+  </view>
+</view>
+<view class="container" wx:if="{{pubshow==1}}">
+  <view class="question-all">
+    <view wx:if="{{!isQuestionextData}}">
+      <questionnaire gtype='RADIO_SURVEY' type='{{question.type}}' qId='{{question.qId}}' title='{{question.title}}' remark='{{question.remark}}' other='{{question.other}}' options='{{question.options}}' textareaValue='{{textareaValue}}' otherValue='{{otherValue}}' bindchange='onAnswerChanged' />
+    </view>
+    <view wx:if="{{isQuestionextData}}">
+      <questionext gtype='RADIO_SURVEY' type='{{question.type}}' qId='{{question.qId}}' title='{{question.title}}' remark='{{question.remark}}' other='{{question.other}}' options='{{question.options}}'  bindchange='onAnswerChanged' />
+    </view>
+    <view class="bottom-btn">
+      <view class="btn {{required==false ? 'redBtn' : ''}} {{selectedOption.length!=0 ? 'redBtn' : ''}}" bindtap="stepNext">
+        继续（{{currentPage}}/{{dataLen}}）
+      </view>
+    </view>
+  </view>
+</view>
+<view class="container" wx:if="{{pubshow==2}}">
+  <form bindsubmit="onSubmit">
+    <view class="userInfo-wrap">
+      <view class="title">
+        <text>请填写您的信息，完成调查。</text>
+      </view>
+      <view>
+        <view class="user-content">
+          <label>
+            <text class="info-til">姓名</text>
+          </label>
+          <input placeholder="请输入你的姓名" placeholder-style="color:#9b9b9b;" value="{{userName}}" name="userName" />
+        </view>
+        <view class="user-content">
+          <text class="info-til">性别</text>
+          <view class="gender">
+            <text class="man {{genterId==1?'active':''}}" data-genter="男" id="1" bindtap="chooseGender">男</text>
+            <text class="{{genterId==2?'active':''}}" data-genter="女" id="2" bindtap="chooseGender">女</text>
+          </view>
+        </view>
+        <view class="user-content">
+          <label>
+            <text class="info-til">年龄</text>
+          </label>
+          <input placeholder="请输入你的年龄" placeholder-style="color:#9b9b9b;" type="number" value="{{age}}" name="age" maxlength="3" minlength="1"/>
+        </view>
+        <view class="user-content">
+          <label>
+            <text class="info-til">电话</text>
+          </label>
+          <input placeholder="请输入你的电话" placeholder-style="color:#9b9b9b;" type="number" value="{{phone}}" name="phone" maxlength="11"/>
+        </view>
+      </view>
+    </view>
+    <view class="bottom-btn">
+      <button class="btn" formType="submit">确认提交</button>
+      <!-- <view class="btn" bindtap="onSubmit">确定提交</view> -->
+    </view>
+  </form>
+</view>
+<view class="container" wx:if="{{pubshow==3}}">
+  <view class="success-model">
+    <view class="img-box">
+      <!-- <image src="/images/success-msg.png"></image> -->
+      <text class="iconfont icon-chenggong"></text>
+    </view>
+    <view class='text'>
+      <text>您好，感谢您的回答。</text>
+    </view>
+  </view>
+  <view class="bottom-btn">
+    <view class="btn" bindtap="goHome">返回首页</view>
+  </view>
+</view>
+<view class="modal-wrap" wx:if="{{showModal}}">
+  <view class="modal-conten">
+    <view class="title">
+      本题最多可选{{maxNum}}项
+    </view>
+    <view class="btn">
+      <text class="cancel" bindtap="closeModal">取消</text>
+      <text bindtap="closeModal">确认</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+<!--components/recorder/recorder.wxml-->
+<view>
+  <view class='speech-btn' bindtap='switchRecord'>
+    <i class='iconfont icon-yuyin'></i>
+  </view>
+  <view wx:if='{{status===1}}' class='mask' bindtap='switchRecord'>
+    <view class='speech'>
+      <view class='bg-circle'>
+        <i class='iconfont icon-yuyin1'></i>
+      </view>
+      <view class='tips'>
+        <text>正在聆听中...</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+<view class="xlServiceFilterBox">
+    <view class="xlFilterBtnBox">
+        <view class="xlAreaBtn {{activeFilter == 1 ? 'xlActive' : ''}}" data-menunum="1" bindtap="xlFiterMenuBtnTap">{{filterArea || '区域'}}</view>
+        <view class="xlserviceBtn {{activeFilter == 2 ? 'xlActive' : ''}}" data-menunum="2" bindtap="xlFiterMenuBtnTap">服务</view>
+    </view>
+    <view class="xlFilterListBox" wx:if="{{activeFilter == 1}}" bindtap="xlHideFilter">
+        <view class="xlFilterBox3" catchtap='xlNoneToDo'>
+            <view class="xlFilterBox3Left">
+                <view class="xlFilterBox3LeftBtn {{activeFilter2 == 1 ? 'xlActive' : ''}}" bindtap="xlFilterChangeItem" data-tapnum="1">区域</view>
+                <view class="xlFilterBox3LeftBtn {{activeFilter2 == 2 ? 'xlActive' : ''}}" bindtap="xlFilterChangeItem" data-tapnum="2">附近</view>
+            </view>
+            <scroll-view scroll-y class="xlFilterBox3Right">
+                <view wx:if="{{activeFilter2 == 1}}" wx:for="{{filterAreaList}}" class="xlFilterBtn {{item.gscopeName == filterArea ? 'xlActive' : ''}}" data-pickBoxNum="filterArea" data-pickListNum="{{index}}" bindtap="xlPickBox1Btn" wx:key="{{index}}">{{item.gscopeName}}</view>
+                <view wx:if="{{activeFilter2 == 2}}" wx:for="{{filterDistanceList}}" class="xlFilterBtn {{item.value == filterDistance ? 'xlActive' : ''}}" data-pickBoxNum="filterDistance" data-pickListNum="{{index}}" bindtap="xlPickBox1Btn2" wx:key="{{index}}">{{item.name}}</view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="xlFilterListBox" wx:if="{{activeFilter == 2}}" bindtap="xlHideFilter">
+        <!-- <view class="xlFilterBox1" wx:if="{{activeFilter == 1}}">
+            <view wx:for="{{filterAreaList}}" class="xlFilterBtn {{item.gscopeName == filterArea ? 'xlActive' : ''}}" data-pickBoxNum="filterArea" data-pickListNum="{{index}}" bindtap="xlPickBox1Btn" wx:key="{{index}}">{{item.gscopeName}}</view>
+        </view> -->
+        <view class="xlFilterBox2" catchtap='xlNoneToDo'>
+            <view wx:for="{{filterserviceList}}" class="xlList {{filterservice[index] ? 'xlActive' : ''}}" data-pickBoxNum="filterservice" data-pickListNum="{{index}}" bindtap="xlPickBox2Btn" wx:key="{{index}}">{{item.name}}</view>
+        </view>
+        <view class="xlBtnBox" catchtap='xlNoneToDo'>
+            <view class="xlReset" bindtap="xlResetTap">重置</view>
+            <view class="xlSubmit" bindtap="xlSubmitTap">确定</view>
+        </view>
+    </view>
+</view>

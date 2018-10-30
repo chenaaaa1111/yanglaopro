@@ -1,0 +1,80 @@
+.user-msg-info {
+  padding: 60rpx 0;
+  border-bottom: 1px solid #f4f4f4;
+  background: #fff;
+  overflow: hidden;
+}
+
+.user-msg-info .user-info {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.user-msg-info .user-info .phone-num {
+  font-size: 32rpx;
+  color: #454553;
+  margin-right: 36rpx;
+}
+
+.user-msg-info .user-info .time {
+  font-size: 28rpx;
+  color: #bcc0c8;
+}
+
+.user-msg-info .msg-con {
+  margin-top: 24rpx;
+  font-size: 36rpx;
+  color: #4a4a4a;
+  text-align: justify;
+  line-height: 52rpx;
+}
+
+.user-msg-info .user-info .star {
+  position: absolute;
+  top: -10rpx;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+}
+
+.user-msg-info .user-info .star .starPIC .iconfont {
+  font-size: 30.8rpx;
+  margin-left: 11.2rpx;
+  color: #fdbbbb;
+}
+
+.user-msg-info .user-info .star .star1 .iconfont {
+  color: #f33;
+}
+
+.reply-wrapper {
+  margin-top: 28rpx;
+  background: rgba(255, 51, 51, 0.10);
+  border: 1px solid #f33;
+  /* max-width: 640rpx; */
+  width: 640rpx;
+  padding: 34rpx 40rpx;
+  box-sizing: border-box;
+  float: right;
+}
+
+.reply-wrapper .reply-top .til {
+  font-size: 32rpx;
+  color: #454553;
+}
+
+.reply-wrapper .reply-top .time {
+  font-size: 28rpx;
+  color: #BCC0C8;
+  margin-left:48rpx;
+}
+
+.reply-wrapper .comment-content{
+  font-size: 36rpx;
+  color: #4A4A4A;
+  letter-spacing: 0;
+  line-height: 52rpx;
+  margin-top:24rpx;
+}

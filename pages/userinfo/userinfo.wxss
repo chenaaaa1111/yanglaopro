@@ -1,0 +1,91 @@
+.container {
+    width: 100%; padding: 20rpx; box-sizing: border-box;
+}
+.xlPickBox1 {
+    padding: 20rpx 0rpx 20rpx; position: relative;
+}
+.xlPickBox1::after {
+    content:''; width: calc(100% + 40rpx); height: 1px; background: #EEE;
+    position: absolute; left: -20rpx; bottom: 0rpx;
+}
+.xlPickBox1 .xlTitle {
+    height: 80rpx; line-height: 80rpx; padding: 0 20rpx; margin-bottom: 20rpx; 
+}
+.xlPickBox1 .xlTitleText {
+    font-size: 40rpx; color: #333;
+}
+.xlPickBox1 .xlListBox {
+    width: calc(100% - 40rpx); line-height: 60rpx; margin-left: 20rpx; margin-bottom: 20rpx;
+    display: flex; flex-wrap: wrap;
+}
+.xlPickBox1 .xlListBox .xlList {
+    display: inline-block; border-radius: 6rpx; background: #F4F4F4; color: #4A4A4A; font-size: 30rpx; text-align: center;
+    width: 30%; height: 60rpx; line-height: 60rpx; margin-right: 3%; margin-bottom: 16rpx;
+}
+.xlPickBox1 .xlListBox .xlList.xlActive {
+    background: #FCD1CC; color: #FD6E6C;
+}
+
+.xlInputBox1 {
+    padding: 20rpx 20rpx 20rpx; position: relative;
+    height: 60rpx; line-height: 60rpx;
+}
+.xlInputBox1::after {
+    content:''; width: calc(100% + 40rpx); height: 1px; background: #EEE;
+    position: absolute; left: -20rpx; bottom: 0rpx;
+}
+.xlInputBox1 .xlTitle {
+    width: 200rpx; font-size: 40rpx; color: #333; display: inline-block; vertical-align: middle;
+}
+.xlInputBox1 .xlInput {
+    width: 450rpx; height: 60rpx; display: inline-block; font-size: 30rpx; color: #333; vertical-align: middle;
+}
+.xlSubmitBtn {
+    width: 100%; padding: 40rpx 0;
+}
+.xlSubmitBtn button {
+    width: 100%; background: #FF3333; height: 88rpx; line-height: 88rpx; 
+    font-size: 32rpx; font-weight: bold; color: #FFF; border-radius: 0;
+}
+
+
+/* 地址输入弹窗 */
+.xlAddressBox {
+    position: fixed; left: 0; right: 0; top: 0; bottom: 0;
+    background: rgba(0, 0, 0, .3); z-index: 1000;
+}
+.xlAddressBox .xlAddressCheckBox {
+    position: absolute; left: 5%; top: 100px;
+    width: 90%; background: #FFF; box-sizing: border-box; padding: 40rpx;
+}
+.xlAddressBox .xlAddressCheckBox .xlTitle {
+    width: 100%; height: 80rpx; line-height: 80rpx; font-size: 40rpx; color: #333; font-weight: 500;
+}
+.xlAddressBox .xlAddressCheckBox .xlListBox {
+    width: 100%; line-height: 60rpx; margin-bottom: 20px; height: 200rpx;
+}
+.xlAddressBox .xlAddressCheckBox .xlListBox .xlList {
+    display: inline-block; border-radius: 6rpx; background: #F4F4F4; color: #4A4A4A; font-size: 30rpx; text-align: center;
+    min-width: 30%; height: 60rpx; line-height: 60rpx; margin-right: 3%; margin-bottom: 16rpx; float: left;
+}
+.xlAddressBox .xlAddressCheckBox .xlListBox .xlList.xlActive {
+    background: #FCD1CC; color: #FD6E6C;
+}
+.xlAddressBox .xlAddressCheckBox .xlInputBox {
+    width: 100%; height: 80rpx; line-height: 80rpx; font-size: 32rpx; color: #24253D;
+    margin-bottom: 60px; border:1px solid #DBDBDB; padding: 0 10px; box-sizing: border-box;
+}
+.xlAddressBox .xlAddressCheckBox .xlBtnBox {
+    width: 100%; height: 80rpx; line-height: 80rpx; padding-bottom: 20px;
+    display: flex; justify-content: flex-start;
+}
+.xlAddressBox .xlAddressCheckBox .xlBtnBox .xlBtn {
+    width: 47%; height: 100%; text-align: center; border: 1px solid #FF3333; box-sizing: border-box;
+    font-size: 36rpx; color: #FF3333;
+}
+.xlAddressBox .xlAddressCheckBox .xlBtnBox .xlBtn:nth-of-type(1) {
+    margin-right: 6%;
+}
+.xlAddressBox .xlAddressCheckBox .xlBtnBox .xlBtn.xlActive {
+    background: #FF3333; color: #FFF;
+}

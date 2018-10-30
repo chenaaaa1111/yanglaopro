@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "居家养老",
+    "usingComponents": {
+      "component-collection": "../../../components/collection/collection",
+      "favour": "../../../components/favour/favour",
+      "collect": "../../../components/collect/collect",
+      "callphone": "../../../components/callphone/callphone"
+    }
+}

@@ -1,0 +1,32 @@
+<!--components/filtergroup/filtergroup.wxml-->
+<view class="group">
+  <view class="group-title"><text>{{title}}</text></view>
+  <view class="group-block row">
+    <block wx:for="{{options}}" wx:key="value">
+      <view wx:if="{{item.selected}}" class="option col s3 selected" bindtap="onItemTap" data-id="{{item.id}}" data-value="{{item.value}}">
+        <text>{{item.label}}</text> 
+        <text class="ivm"></text>
+      </view>
+      <view wx:else class="option col s3" bindtap="onItemTap" 
+      data-id="{{item.id}}" data-value="{{item.value}}">
+        <text>{{item.label}}</text> 
+        <text class="ivm"></text>
+      </view>
+    </block>
+    <view class="rel range-ipt">
+      <text>自定义</text>
+      <view class="ipt-container">
+        <input class="ipt" type="number" bindconfirm="done" value="{{min}}" bindblur="minChange"></input>
+        <text class="unit">平</text>
+        <view class="ivm"></view>
+      </view>
+      <text>—</text>
+      <view class="ipt-container">
+        <input class="ipt" type="number" bindconfirm="done" value="{{max}}" bindblur="maxChange"></input>
+        <text class="unit">平</text>
+        <view class="ivm"></view>
+      </view>
+      <view class="ivm"></view>
+    </view>
+  </view>
+</view>

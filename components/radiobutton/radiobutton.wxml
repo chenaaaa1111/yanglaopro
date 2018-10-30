@@ -1,0 +1,23 @@
+<!--components/radiobutton/radiobutton.wxml-->
+<view class='container'>
+  <wxs module='btnType'>
+  module.exports={
+    FAVOUR_BTN:'FAVOUR_BTN',
+    COLLECT_BTN:'COLLECT_BTN'
+  };
+  </wxs>
+  <view class='radio-wrapper tc selected' bindtap='onTap'>
+    <view wx:if='{{type==btnType.FAVOUR_BTN}}' class='favor icon-wrapper tc'>
+      <i wx:if='{{selected}}' class='icon iconfont icon-zan selected'></i>
+      <i wx:else class='icon iconfont icon-zan'></i>
+    </view>
+    <view wx:elif='{{type==btnType.COLLECT_BTN}}' class='collect icon-wrapper tc'>
+      <i wx:if='{{selected}}' class='icon iconfont icon-shoucang1 selected'></i>
+      <i wx:else class='icon iconfont icon-shoucang1'></i>
+    </view>
+    <view class='label tc'>
+      <text wx:if='{{!selected}}' class='label'>{{text}}</text>
+      <text wx:else class='label'>{{text}}</text>
+    </view>
+  </view>
+</view>

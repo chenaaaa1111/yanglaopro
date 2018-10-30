@@ -1,0 +1,6 @@
+<view class="container">
+    <scroll-view class="xlListBox" scroll-y>
+        <component-servicelistitem wx:if="{{ServiceList.length}}" wx:for="{{ServiceList}}" wx:key="{{index}}" iteminfo="{{item}}"></component-servicelistitem>
+    </scroll-view>
+    <view class="xlNoDataBox" wx:if="{{xlNoDataBox}}">您暂未关注机构</view>
+</view>

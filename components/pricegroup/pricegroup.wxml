@@ -1,0 +1,8 @@
+<!--components/pricegroup/pricegroup.wxml-->
+<view class="ul">
+  <view wx:for="{{options}}" wx:key="{{value}}" data-value="{{item.value}}" 
+  data-id="{{item.id}}" bindtap="onItemTap" class="li">
+    <text wx:if="{{item.selected}}" class="orange">{{item.label}}</text>
+    <text wx:else>{{item.label}}</text>
+  </view>
+</view>

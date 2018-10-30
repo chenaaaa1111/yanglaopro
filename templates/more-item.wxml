@@ -1,0 +1,8 @@
+<template name="groupItem">
+<view class="more-group">
+  <view class="group-title"><text>{{groupName}}</text></view>
+  <view class="ul row">
+    <view wx:for="{{groupItems}}" wx:key="value" class="li col s3">{{item.label}}</view>
+  </view>
+</view>
+</template>

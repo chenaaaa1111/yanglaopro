@@ -1,0 +1,46 @@
+<!--pages/quickSearch/index.wxml-->
+<important src="./../../templates/fastshgroup/index.wxml" />
+<view class='coner'>
+    <view class='content'>
+            <view class='title'>照护类型</view>        
+            <view class='context'>                  
+                <text isCheck wx:for="{{serviceTypeItems}}" wx:key="{{item.id}}"
+                 class="{{item.isCheck?'active':''}}"  data-type="{{item.name}}"
+                bindtap="chanserver" id="{{item.id}}">{{item.name}}</text>
+            </view>
+    </view>
+    <view class='content'>
+            <view class='title'>总费用（元／人／月）</view>
+            <view class='context'>
+                <text bindtap="chooseFee" id="all"
+                class="{{fees=='all'?'active':''}}" >不限</text>
+                <text bindtap="chooseFee"  wx:for="{{feesArray}}" wx:key="{{item.id}}"
+                 class="{{fees==item.id?'active':''}}" data-val="{{item.name}}"
+                 style=""
+                  id="{{item.id}}" >{{item.name}}</text>
+            </view>
+    </view>
+    <view class='content'>
+            <view class='title'>希望养老的区域</view>
+            <view class='context'>
+                <text class="{{area=='a1'?'active':''}}" 
+                id="a1" bindtap="choosearea">全市</text>
+                <text wx:for="{{scopeArray}}" style="" wx:key="{{item.id}}"
+                 class="{{area==item.firstPY?'active':''}}" 
+                 id="{{item.firstPY}}" bindtap="choosearea" >{{item.gscopeName}}</text>     
+            </view>
+    </view>
+    <view class='content nobtom'>
+            <view class='title'>房型</view>
+            <view class='context'>
+                 <text wx:for="{{houseTypeArray}}" class="{{house==item.id?'active':''}}" data-parameter="{{item.name}}" style="" wx:key="{{item.id}}"
+                id="{{item.id}}" bindtap="changeHouse">{{item.value
+}}</text>
+            </view>
+    </view>
+ 
+</view>
+   <view class='fotom'>
+      <button class="refrush " bindtap="refrush" >重置</button>
+      <button class="mackSure  " bindtap="makeSure">确定</button>
+    </view>

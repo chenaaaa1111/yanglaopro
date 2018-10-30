@@ -1,0 +1,161 @@
+
+.xlTopBox {
+    width: 100%; height: 160rpx; padding: 0 40rpx; box-sizing: border-box;
+    font-size: 30rpx; color: #4A4A4A;
+}
+.xlTopBox .xlList1, .xlTopBox .xlList2 {
+    width: 100%; display: flex; justify-content: space-between; height: 80rpx; line-height: 80rpx; position: relative;
+}
+.xlTopBox .xlList2 .xlItem {
+    width: 30rpx; height: 30rpx; border-radius: 50%; background: #D8D8D8;
+}
+.xlTopBox .xlList2 .xlItem:nth-of-type(1) {
+    background: #FF3333;
+}
+.xlTopBox .xlList2::before {
+    content: ''; width: 50%; height: 4rpx; background: #D8D8D8;
+    position: absolute; left: 0; top: 13rpx; z-index: -1;
+}
+.xlTopBox .xlList2::after {
+    content: ''; width: 50%; height: 4rpx; background: #D8D8D8;
+    position: absolute; left: 50%; top: 13rpx; z-index: -1;
+}
+.xlTopBox .xlList2.xlActive1::before {
+    background: #FF3333;
+}
+.xlTopBox .xlList2.xlActive2::before {
+    background: #FF3333;
+}
+.xlTopBox .xlList2.xlActive2::after {
+    background: #FF3333;
+}
+.xlTopBox .xlList2.xlActive1 .xlItem:nth-of-type(2) {
+    background: #FF3333;
+}
+.xlTopBox .xlList2.xlActive2 .xlItem:nth-of-type(2) {
+    background: #FF3333;
+}
+.xlTopBox .xlList2.xlActive2 .xlItem:nth-of-type(3) {
+    background: #FF3333;
+}
+
+.xlContentBox {
+    width: 100%; box-sizing: border-box; padding: 0 40rpx; padding-bottom: 120rpx;
+}
+.xlContentBox .xlActive {
+    border-color: #FF3333 !important;
+}
+
+.xlContentBox .xlInputBox1 {
+    width: 100%; margin-bottom: 40rpx;
+}
+.xlContentBox .xlInputBox1 .xlTitle {
+    height: 60rpx; line-height: 60rpx; font-size: 30rpx; color: #9B9B9B;
+}
+.xlContentBox .xlInputBox1 .xlInput {
+    height: 80rpx; line-height: 80rpx; font-size: 36rpx; color: #4A4A4A;
+    border-bottom: 1px solid #F5F5F5;
+}
+.xlContentBox .xlInputBox1 .xlInput input {
+    width: 100%; height: 60rpx; line-height: 60rpx;
+}
+
+.xlContentBox .xlInputBox2 {
+    width: 100%; margin-bottom: 40rpx;
+}
+.xlContentBox .xlInputBox2 .xlTitle {
+    height: 60rpx; line-height: 60rpx; font-size: 30rpx; color: #9B9B9B;
+}
+.xlContentBox .xlInputBox2 .xlInput {
+    height: 80rpx; line-height: 80rpx; font-size: 36rpx; color: #4A4A4A;
+    border-bottom: 1px solid #F5F5F5; display: flex; justify-content: space-between;
+}
+.xlContentBox .xlInputBox2 .xlInput input {
+    width: 70%; height: 60rpx; line-height: 60rpx;
+}
+.xlContentBox .xlInputBox2 .xlInput .xlGetSms {
+    width: 30%; height: 60rpx; line-height: 60rpx; text-align: right;
+    font-size: 28rpx; color: #4A4A4A; background: none;
+}
+
+.xlContentBox .xlFileBox1 {
+    width: 100%; margin-bottom: 40rpx;
+}
+.xlContentBox .xlFileBox1 .xlTitle {
+    min-height: 44rpx; line-height: 44rpx; font-size: 30rpx; color: #9B9B9B;
+    margin-bottom: 20rpx;
+}
+.xlContentBox .xlFileBox1 .xlImgBox {
+    width: 100%; display: flex; justify-content: flex-start; flex-wrap: wrap;
+    border-bottom: 1px solid #F5F5F5;
+}
+.xlContentBox .xlFileBox1 .xlImgBox .xlImg {
+    position: relative;
+    width: 200rpx; height: 200rpx; border-radius: 50%; margin-bottom: 20rpx; margin-right: 20rpx;
+    border: 2px dotted #F3F3F3; box-sizing: border-box;
+}
+.xlContentBox .xlFileBox1 .xlImgBox .xlImg image {
+    width: 100%; height: 100%; border-radius: 50%;
+}
+.xlFileBox1 .xlImgBox .xlImg .xlRemoveBtn {
+    width: 40rpx; height: 40rpx; line-height: 30rpx; border-radius: 50%; text-align: center; background: #FF3333;
+    position: absolute; right: -6rpx; top: 0; transform: rotateZ(45deg);
+}
+.xlContentBox .xlFileBox1 .xlImgBox .xlImg .xlRemoveBtn::after {
+    content: '+'; font-size: 30rpx; color: #FFF;
+}
+.xlContentBox .xlFileBox1 .xlImgBox .xlAddBtn {
+    width: 200rpx; height: 200rpx; line-height: 180rpx; border-radius: 50%; box-sizing: border-box;
+    border: 2px dotted #F3F3F3; text-align: center; margin-bottom: 20rpx; margin-right: 20rpx;
+}
+.xlContentBox .xlFileBox1 .xlImgBox .xlAddBtn::after {
+    content: '+'; font-size: 100rpx; color: #D5D5D5;
+}
+
+.xlContentBox .xlTip {
+    width: 100%; box-sizing: border-box; padding-left: 40rpx; position: relative;
+    font-size: 30rpx; color: #4A4A4A;
+}
+.xlContentBox .xlTip::before {
+    content: '注:'; width: 30rpx; height: 30rpx; font-size: 30rpx; position: absolute; left: 0; top: 0;
+}
+
+.xlContentBox .xlBtnBox {
+    width: 100%; height: 120rpx; line-height: 80rpx; box-sizing: border-box; padding: 20rpx 40rpx;
+    display: flex; justify-content: space-between; background: #FFF;
+    border-top: 1px solid #F1F1F1; position: fixed; bottom: 0; left: 0;
+}
+.xlContentBox .xlBtnBox .xlBtn {
+    width: 47%; height: 100%; text-align: center; border: 1px solid #FF3333; box-sizing: border-box;
+    font-size: 36rpx; color: #FF3333;
+}
+.xlContentBox .xlBtnBox .xlBtn2 {
+    width: 100%; height: 100%; text-align: center; border: 1px solid #FF3333; box-sizing: border-box;
+    font-size: 36rpx; color: #FF3333;
+}
+.xlContentBox .xlBtnBox .xlActive {
+    background: #FF3333; color: #FFF;
+}
+
+.xlImgCropper {
+    position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 1000;
+    background: #000;
+}
+.xlImgCropper .mycropper {
+    width: 100%; height: calc(100% - 60px);
+}
+.xlImgCropper .xlCtlBox {
+    width: 100%; height: 60px; background: #FFF; position: absolute;
+    bottom: 0; left: 0; box-sizing: border-box; padding: 10px 20px;
+    display: flex; justify-content: center;
+}
+.xlImgCropper .xlCtlBox .xlSliderBox {
+    width: calc(100% - 100px); height: 40px; line-height: 40px;
+}
+.xlImgCropper .xlCtlBox .xlSliderBox .xlSlider {
+    width: 80%; margin-left: 10%;
+}
+.xlImgCropper .xlCtlBox .xlBtn {
+    width: 80px; height: 30px; line-height: 30px; margin-left: 20px; background: #FF3333; color: #FFF;
+    font-size: 14px; border-radius: 8px; text-align: center; margin-top: 5px;
+}

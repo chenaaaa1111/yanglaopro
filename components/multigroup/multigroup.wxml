@@ -1,0 +1,24 @@
+<!--components/multigroup/multigroup.wxml-->
+<wxs module='btnType'>
+  module.exports={
+    RADIO_TEST:'RADIO_TEST',
+    RADIO_SURVEY:'RADIO_SURVEY'
+  };
+</wxs>
+<view wx:if='{{gtype==btnType.RADIO_SURVEY}}' class='survey ans-container'>
+    <block wx:for='{{options}}' wx:key="id">
+      <view wx:if='{{item.selected}}' class='ans-item selected' bindtap='onItemTap' data-value='{{item.value}}' data-id='{{item.id}}'>
+      <view class='lb-container'>
+        <view class='lb label'><text>{{item.label}}</text></view>
+        <view wx:if='{{item.extra}}' class='lb extra'><text>{{item.extra}}</text></view>
+      </view>
+      <view class='selector'></view>
+      </view>
+      <view wx:else class='ans-item' bindtap='onItemTap' data-value='{{item.value}}' data-id='{{item.id}}'>           
+      <view class='lb-container'>
+        <view class='lb label'><text>{{item.label}}</text></view>
+        <view wx:if='{{item.extra}}' class='lb extra'><text>{{item.extra}}</text></view>
+      </view>
+      </view>
+    </block>
+</view>

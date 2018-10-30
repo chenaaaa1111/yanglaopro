@@ -1,0 +1,29 @@
+/* components/typegroup/typegroup.wxss */
+.li{
+  text-align: center;
+  font-size:28rpx;
+  line-height: 88rpx;
+  color:#2A2A00;
+  border-top:1rpx solid #eee;
+  position: relative;
+}
+.li:nth-child(1){
+  border-top:0 none;
+}
+.li .li-icon{
+  position: absolute;
+  top:50%;
+  right:44rpx;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+}
+
+.red{
+  color:#E2594A;
+}
+
+.li-icon .ic{
+  width:36rpx;
+  height: 36rpx;
+}

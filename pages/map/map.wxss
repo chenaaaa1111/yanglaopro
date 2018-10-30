@@ -1,0 +1,126 @@
+.container {
+    width: 100%; height: 100%; position: relative;
+}
+map {
+    width: 100%; height: 100%;
+}
+.xlLocationBtn {
+    position: fixed; top: 140rpx; right: 40rpx; width: 80rpx; height: 80rpx; border-radius: 12rpx; background: #FFF;
+    z-index: 1000; overflow: hidden;
+}
+.xlLocationBtn .xlImg {
+    width: 100%; height: 100%;
+}
+
+.xlDetailBox1 {
+    position: fixed; bottom: 0; left: 0; z-index: 1000; width: 100%;
+    padding-top: 40rpx; background: #FFF; box-shadow: 0 -1px 18px #ccc;
+}
+.xlDetailBox1 .xlTopBox {
+	display:flex; flex-direction:row; padding:0 32rpx;
+}
+.xlDetailBox1 .xlTopBox .xlImgBox {
+    width:240rpx; height:180rpx; margin-right:36rpx; z-index: 2;
+}
+.xlDetailBox1 .xlTopBox .xlImgBox .xlDetailImg {
+    width: 100%; height: 100%; 
+}
+.xlDetailBox1 .xlTopBox .xlTextBox {
+    width: 470rpx; display:flex; flex-direction:column; vertical-align:middle;
+}
+.xlDetailBox1 .xlTopBox .xlTextBox .xlTitle {
+    color:#4a4a4a; font-size:30rpx; letter-spacing:0; font-weight:bold;
+}
+.xlDetailBox1 .xlTopBox .xlTextBox .xlPosition {
+    font-size:24rpx; color:#9b9b9b; letter-spacing:0; line-height:34rpx; margin-top:4rpx;
+    word-break:break-all; white-space:normal; 
+}
+.xlDetailBox1 .xlTopBox .xlTextBox .xlPrise {
+    display: inline-block; font-size:32rpx; color:#f33; letter-spacing:0; line-height:44rpx; margin-top:10rpx; font-weight:bolder;
+    position: relative;
+}
+.xlDetailBox1 .xlTopBox .xlTextBox .xlPrise .eve {
+    font-size: 22rpx; color: #f33; font-weight: 400; display: inline; margin-left: 8rpx;
+}
+
+.xlDetailBox1 .xlTopBox .xlTextBox {
+    
+}
+.xlDetailBox1 .xlTopBox .xlTextBox .xlList {
+    display:inline-block; width:72rpx; height:30rpx;
+	font-size:22rpx; color:#74b4eb; text-align:center; line-height:32rpx;
+	border:1px solid #74b4eb; margin-right:28rpx; margin-top:20rpx;
+}
+
+.xlDetailBox1 .xlBottomInfoBox {
+    display:flex; flex-direction:row; width:100%; background:#f9f9f9; padding: 0 32rpx;
+	position:relative; margin-top:20rpx; border-bottom:1px solid #e6e6e6; box-sizing: border-box;
+}
+.xlDetailBox1 .xlBottomInfoBox .xlTextInfo {
+    width: 100%; height: 80rpx; line-height: 80rpx; overflow: hidden; font-size: 24rpx; color: #333;
+}
+.xlDetailBox1 .xlBottomInfoBox .xlRightBtn {
+    position:absolute; right:0px;
+	top:20rpx; background:#f33; font-size:24rpx; color:#fff;
+	padding:0px 12rpx; margin:10rpx 24rpx 0 0;
+}
+
+
+
+.xlDetailBox2 {
+    width: 100%; box-sizing: border-box; position: relative; padding: 40rpx 30rpx; background: #FFF;
+    z-index: 100; position: fixed; bottom: 0; left: 0;
+    box-shadow: 0px -1px 18px #CCC;
+}
+.xlDetailBox2::after {
+    content: ''; width: 100%; height: 1px; background: #e6e6e6; position: absolute; left: 0px; bottom: 0;
+}
+.xlDetailBox2 .xlImgBox {
+    width: 240rpx; height: 180rpx; float: left;
+}
+.xlDetailBox2 .xlImgBox .xlDetailImg {
+    width: 100%; height: 100%; 
+}
+.xlDetailBox2 .xlTextBox {
+    width: calc(100% - 270rpx); min-height: 180rpx; margin-left: 270rpx;
+}
+.xlDetailBox2 .xlTextBox .xlTitle {
+    width: 100%; min-height: 40rpx; line-height: 40rpx; margin-bottom: 8rpx; 
+    font-size: 30rpx; font-weight: bold; color: #4a4a4a;
+    word-break:break-all; white-space:normal; 
+}
+.xlDetailBox2 .xlTextBox .xlPosition {
+    width: 100%; min-height: 36rpx; line-height: 36rpx; font-size: 24rpx; color: #4a4a4a;
+    word-break:break-all; white-space:normal; 
+}
+.xlDetailBox2 .xlTextBox .xlCompany {
+    width: 100%; min-height: 36rpx; line-height: 36rpx; font-size: 24rpx; color: #4a4a4a;
+    word-break:break-all; white-space:normal; 
+}
+
+.xlTopSearchBox {
+    width: 100%; height: 110rpx; overflow: hidden; background: #FFF;
+    position: fixed; left: 0; top: 0 ; z-index: 1000;  box-shadow: 0 1px 18px #ccc;
+}
+.xlTopSearchBox .xlTopSearch {
+    width: 100%; height: 100%; box-sizing: border-box; padding: 12rpx 40rpx; z-index: 1001;
+}
+.xlTopSearchBox .xlTopSearch .xlSearchBtn {
+    width: 100%; height: 80rpx; position: relative; background: #F2F2F2; z-index: 1002;
+}
+.xlTopSearchBox .xlTopSearch .xlSearchBtn cover-view {
+    width: 100%px; height: 80rpx; padding-left: 100rpx;
+    font-size: 28rpx; color: #999; line-height: 80rpx; box-sizing: border-box;
+}
+.xlTopSearchBox .xlTopSearch .xlSearchIconBox {
+    width: 36rpx; height: 36rpx; position: absolute; left: 80rpx; top: 38rpx; z-index: 1003;
+}
+.xlTopSearchBox .xlTopSearch .xlSearchIconBox .xlSearchIcon {
+    width: 100%; height: 100%; z-index: 1004;
+}
+.xlTopSearchBox .xlTopSearch .xlMapIconBox {
+    display: none; width: 60rpx; height: 60rpx; position: absolute; top: 28rpx; right: 40rpx; z-index: 1005;
+}
+.xlTopSearchBox .xlTopSearch .xlMapIconBox .xlMapIcon {
+    width: 100%; height: 100%; z-index: 1006;
+}

@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/orgindetail/orgindetail",
+    "pages/organizationin/organizationin",
+    "pages/loginwx/loginwx",
+    "pages/services/list/list",
+    "pages/services/details/details",
+    "pages/organization/list/list",
+    "pages/map/map",
+    "pages/login/login",
+    "pages/collections/service/service",
+    "pages/collections/organization/organization",
+    "pages/demand/demand",
+    "pages/usercenter/usercenter",
+    "pages/userinfo/userinfo",
+    "pages/news/list/list",
+    "pages/organization/details/details",
+    "pages/quicksearch/quicksearch",
+    "pages/news/details/details",
+    "pages/search/search",
+    "pages/organization/writemsg/writemsg",
+    "pages/organization/msgboard/msgboard",
+    "pages/services/writemsg/writemsg",
+    "pages/services/msgboard/msgboard",
+    "pages/active/alzheimer/alzheimer",
+    "pages/active/questionnaire/questionnaire",
+    "pages/selftest/selftest",
+    "pages/test/test"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "北京养老地图",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F5F5F5"
+  },
+  "tabBar": {
+    "color": "#949494",
+    "selectedColor": "#FF3333",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/home_nosel@2x.png",
+        "selectedIconPath": "/images/home_sel@2x.png"
+      },
+      {
+        "pagePath": "pages/usercenter/usercenter",
+        "text": "我的",
+        "iconPath": "/images/user_nosel@2x.png",
+        "selectedIconPath": "/images/user_sel@2x.png"
+      },
+      {
+        "pagePath": "pages/organizationin/organizationin",
+        "text": "机构入驻",
+        "iconPath": "/images/settled_nosel@2x.png",
+        "selectedIconPath": "/images/settled_sel@2x.png"
+      }
+    ]
+  }
+}

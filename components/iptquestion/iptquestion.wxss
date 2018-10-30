@@ -1,0 +1,26 @@
+/* components/iptquestion/iptquestion.wxss */
+.survey.ans-container{
+  padding: 70rpx 0;
+  border-bottom: 1px solid #E6E6E6;
+}
+.survey .title{
+  font-size: 40rpx;
+  color: #333;
+}
+.survey .ans-item{
+  margin: 0 30rpx;
+  /* border:1rpx solid #900; */
+  padding: 20rpx 70rpx;
+  color: #4A4A4A;
+  font-size: 40rpx;
+  font-weight: 900;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.survey .ipt{
+  width: 400rpx;
+  font-size: 30rpx;
+  color:#9B9B9B;
+}

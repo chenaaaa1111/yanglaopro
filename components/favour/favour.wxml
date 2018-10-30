@@ -1,0 +1,10 @@
+<!--components/favour/favour.wxml-->
+<view>
+<wxs module='btnType'>
+  module.exports={
+    FAVOUR_BTN:'FAVOUR_BTN',
+    COLLECT_BTN:'COLLECT_BTN'
+  };
+  </wxs>
+<radiobutton type='{{btnType.FAVOUR_BTN}}' label='赞' selected='{{selected}}' bindselect='onRadioButtonTap'></radiobutton>
+</view>

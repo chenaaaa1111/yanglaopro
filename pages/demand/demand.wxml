@@ -1,0 +1,33 @@
+<!--logs.wxml-->
+<view class="container"> 
+  <view class="xlPickBox1">
+    <view class="xlTitle"><text class="xlTitleText">希望养老的区域</text></view>
+    <view class="xlListBox">
+        <view wx:for="{{serviceArea}}" class="xlList {{userLoginInfo.serviceArea == item.gscopeId ? 'xlActive' : ''}}" data-pickBoxNum="serviceArea" data-pickListNum="{{index}}" bindtap="xlPickBox3Btn" wx:key="{{index}}">{{item.gscopeName}}</view>
+    </view>
+  </view>
+  <view class="xlPickBox1">
+    <view class="xlTitle"><text class="xlTitleText">养老机构价位（元/人/月）</text></view>
+    <view class="xlListBox">
+        <view wx:for="{{servicePrice}}" class="xlList {{userLoginInfo.servicePrice == item ? 'xlActive' : ''}}" data-pickBoxNum="servicePrice" data-pickListNum="{{index}}" bindtap="xlPickBox1Btn" wx:key="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <view class="xlPickBox1">
+    <view class="xlTitle"><text class="xlTitleText">需要的养老服务</text></view>
+    <view class="xlListBox">
+        <view wx:for="{{serviceContent}}" class="xlList {{serviceContentData[index] ? 'xlActive' : ''}}" data-pickBoxNum="serviceContent" data-pickListNum="{{index}}" bindtap="xlPickBox2Btn" wx:key="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <view class="xlPickBox1">
+    <view class="xlTitle"><text class="xlTitleText">离家距离</text></view>
+    <view class="xlListBox">
+        <view wx:for="{{serviceRange}}" class="xlList {{userLoginInfo.serviceRange == item ? 'xlActive' : ''}}" data-pickBoxNum="serviceRange" data-pickListNum="{{index}}" bindtap="xlPickBox1Btn" wx:key="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <view class="xlOtherDemand">
+    <textarea placeholder="请写下您的需求，200字以内" maxlength="200" value="{{userLoginInfo.serviceDetail}}" data-xlInputBoxNum="serviceDetail" bindinput="xlInputBox1Inp"></textarea>
+  </view>
+  <view class="xlSubmitBtn">
+    <button bindtap="xlSubmitBtnTap">保存需求</button>
+  </view>
+</view>

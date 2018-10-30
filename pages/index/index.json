@@ -1,0 +1,10 @@
+{
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "webp": "./../../components/webp/webp",
+    "component-mytabbar": "../../components/mytabbar/mytabbar",
+    "addialog": "../../components/addialog/addialog",
+    "callphone": "../../components/callphone/callphone"
+  }
+}

@@ -1,0 +1,141 @@
+<view>
+  <view class="xlTopBox">
+    <view class="xlList1">
+      <text class="xlItem">申请资料</text>
+      <text class="xlItem">机构信息</text>
+      <text class="xlItem">获取信息表</text>
+    </view>
+    <view class="xlList2 {{step==2?'xlActive1':''}} {{step==3?'xlActive2':''}}">
+      <text class="xlItem"></text>
+      <text class="xlItem"></text>
+      <text class="xlItem"></text>
+    </view>
+  </view>
+  <view class="xlContentBox" wx-if="{{step==1}}">
+    <view class="xlInputBox1">
+      <view class="xlTitle">机构名称(必填)</view>
+      <view class="xlInput {{errorNum == 1 ? 'xlActive' : ''}}">
+        <input placeholder="请输入机构名称" type="text" value="{{xlOrgInfo.orgName}}" data-inputName="orgName" bindblur="xlInputBox1" />
+      </view>
+    </view>
+    <view class="xlInputBox1">
+      <view class="xlTitle">联系人姓名(必填)</view>
+      <view class="xlInput {{errorNum == 2 ? 'xlActive' : ''}}">
+        <input placeholder="请输入联系人姓名" type="text" value="{{xlOrgInfo.contactName}}" data-inputName="contactName" bindblur="xlInputBox1" />
+      </view>
+    </view>
+    <view class="xlInputBox1">
+      <view class="xlTitle">联系人职务</view>
+      <view class="xlInput {{errorNum == 3 ? 'xlActive' : ''}}">
+        <input placeholder="请输入联系人职务" type="text" value="{{xlOrgInfo.contactWork}}" data-inputName="contactWork" bindblur="xlInputBox1" />
+      </view>
+    </view>
+    <view class="xlInputBox2">
+      <view class="xlTitle">联系人手机(必填)</view>
+      <view class="xlInput {{errorNum == 4 ? 'xlActive' : ''}}">
+        <input placeholder="联系人手机" type="number" value="{{xlOrgInfo.contactPhone}}" data-inputName="contactPhone" bindblur="xlInputBox1" />
+        <text class="xlGetSms" disabled="disabled" bindtap="xlGetSMSCode">{{butMsg}}</text>
+      </view>
+    </view>
+    <view class="xlInputBox1">
+      <view class="xlTitle">验证码</view>
+      <view class="xlInput {{errorNum == 5 ? 'xlActive' : ''}}">
+        <input placeholder="请输入验证码" type="number" value="{{xlOrgInfo.smsCode}}" data-inputName="smsCode" bindblur="xlInputBox1" />
+      </view>
+    </view>
+    <view class="xlFileBox1">
+      <view class="xlTitle">联系人证照：提供身份证或公司名片或企业授权书(必填)</view>
+      <view class="xlImgBox {{errorNum == 6 ? 'xlActive' : ''}}">
+        <view class="xlImg" wx:for="{{xlOrgInfo.contactCertificate.datas}}">
+          <image src="{{item}}" lazy-load="{{true}}" />
+          <view class="xlRemoveBtn" data-index="{{index}}" data-inputName="contactCertificate" bindtap="xlFileBox1Remove"></view>
+        </view>
+        <view class="xlAddBtn" data-inputName="contactCertificate" bindtap="xlFileBox1Add"></view>
+      </view>
+    </view>
+    <view class="xlFileBox1">
+      <view class="xlTitle">机构营业执照(上传图片，最多3张)(必填)</view>
+      <view class="xlImgBox {{errorNum == 7 ? 'xlActive' : ''}}">
+        <view class="xlImg" wx:for="{{xlOrgInfo.orgLicense.datas}}">
+          <image src="{{item}}" lazy-load="{{true}}" />
+          <view class="xlRemoveBtn" data-index="{{index}}" data-inputName="orgLicense" bindtap="xlFileBox1Remove"></view>
+        </view>
+        <view class="xlAddBtn" data-inputName="orgLicense" bindtap="xlFileBox1Add"></view>
+      </view>
+    </view>
+    <view class="xlBtnBox">
+      <view class="xlBtn" bindtap="xlCancel">取消</view>
+      <view class="xlBtn xlActive" bindtap="xlgoStep2">继续</view>
+    </view>
+  </view>
+  <view class="xlContentBox" wx-if="{{step==2}}">
+    <view class="xlInputBox1">
+      <view class="xlTitle">机构地址(必填)</view>
+      <view class="xlInput {{errorNum == 8 ? 'xlActive' : ''}}">
+        <input placeholder="请输入机构地址" type="text" value="{{xlOrgInfo.orgAddr}}" data-inputName="orgAddr" bindblur="xlInputBox1" />
+      </view>
+    </view>
+    <view class="xlInputBox1">
+      <view class="xlTitle">机构简介(必填)</view>
+      <view class="xlInput {{errorNum == 9 ? 'xlActive' : ''}}">
+        <input placeholder="请输入机构简介" type="text" value="{{xlOrgInfo.orgIntroduce}}" data-inputName="orgIntroduce" bindblur="xlInputBox1" />
+      </view>
+    </view>
+    <view class="xlInputBox1">
+      <view class="xlTitle">机构对外联系电话(必填)</view>
+      <view class="xlInput {{errorNum == 10 ? 'xlActive' : ''}}">
+        <input placeholder="请输入机构对外联系电话" type="text" value="{{xlOrgInfo.orgTell}}" data-inputName="orgTell" bindblur="xlInputBox1" />
+      </view>
+    </view>
+    <view class="xlFileBox1">
+      <view class="xlTitle">机构LOGO(上传图片)</view>
+      <view class="xlImgBox {{errorNum == 11 ? 'xlActive' : ''}}">
+        <view class="xlImg" wx:for="{{xlOrgInfo.orgLogo.datas}}">
+          <image src="{{item}}" lazy-load="{{true}}" />
+          <view class="xlRemoveBtn" data-index="{{index}}" data-inputName="orgLogo" bindtap="xlFileBox1Remove"></view>
+        </view>
+        <view class="xlAddBtn" data-inputName="orgLogo" bindtap="xlFileBox1Add"></view>
+      </view>
+    </view>
+    <view class="xlFileBox1">
+      <view class="xlTitle">机构照片(上传图片，最多3张)</view>
+      <view class="xlImgBox {{errorNum == 12 ? 'xlActive' : ''}}">
+        <view class="xlImg" wx:for="{{xlOrgInfo.orgPhotots.datas}}">
+          <image src="{{item}}" lazy-load="{{true}}" />
+          <view class="xlRemoveBtn" data-index="{{index}}" data-inputName="orgPhotots" bindtap="xlFileBox1Remove"></view>
+        </view>
+        <view class="xlAddBtn" data-inputName="orgPhotots" bindtap="xlFileBox1Add"></view>
+      </view>
+    </view>
+    <view class="xlFileBox1">
+      <view class="xlTitle">机构设施/服务配图(上传图片，最多7张)</view>
+      <view class="xlImgBox {{errorNum == 13 ? 'xlActive' : ''}}">
+        <view class="xlImg" wx:for="{{xlOrgInfo.orgService.datas}}">
+          <image src="{{item}}" lazy-load="{{true}}" />
+          <view class="xlRemoveBtn" data-index="{{index}}" data-inputName="orgService" bindtap="xlFileBox1Remove"></view>
+        </view>
+        <view class="xlAddBtn" data-inputName="orgService" bindtap="xlFileBox1Add"></view>
+      </view>
+    </view>
+    <view class="xlBtnBox">
+      <view class="xlBtn" bindtap="xlgoStep1">上一页</view>
+      <view class="xlBtn xlActive" bindtap="xlSubmit">确定提交</view>
+    </view>
+  </view>
+  <view class="xlContentBox" wx-if="{{step==3}}">
+    <view class="xlInputBox1">
+      <view class="xlTitle">邮箱地址</view>
+      <view class="xlInput">
+        <input placeholder="请输入邮箱地址" :value="email" bindblur="inputEmail" />
+      </view>
+    </view>
+    <view class="xlTip">
+      请填写您的有效邮箱，获取并填写《养老机构/驿站完整信息表》，以便我们为用户展示贵司的更多更准确内容。
+非常感谢您对北京养老地图的信任。
+    </view>
+    <view class="xlBtnBox">
+      <view class="xlBtn2 xlActive"bindtap="xlGetInfoTabelFile">获取信息表</view>
+    </view>
+  </view>
+  <component-successModule wx-if="{{showSuccessModule}}" />
+</view>

@@ -1,0 +1,452 @@
+@import "../../../styles/msg-board.wxss";
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #f4f4f4;
+  font-size: 28rpx;
+}
+
+.h3 {
+  font-size: 40rpx;
+  color: #000;
+}
+
+.not-ava {
+  color: #666;
+  margin: 28rpx auto 18rpx;
+  display: block;
+  text-align: center;
+}
+
+.xlSwiperBox {
+  width: 100%;
+  height: 524rpx;
+}
+
+.xlSwiperBox .xlImage {
+  width: 100%;
+  height: 100%;
+}
+
+.xlTitleBox {
+  width: 100%;
+  position: relative;
+  background: #fff;
+  padding: 64rpx 36rpx;
+}
+
+.xlTitleBox .xlTitle {
+  font-size: 48rpx;
+  font-weight: 500;
+  color: #333;
+  line-height: 64rpx;
+}
+
+.xlTitleBox .xlCollection {
+  position: absolute;
+  right: 40rpx;
+  top: 60rpx;
+}
+
+.xlCollectionBox {
+  top: 60rpx;
+}
+
+.xlMiddleBox {
+  width: 100%;
+  padding: 0 36rpx;
+  background: #fff;
+  margin-bottom: 24rpx;
+  box-sizing: border-box;
+  padding-bottom: 66rpx;
+}
+
+.xlMiddleBox .xlTitle {
+  width: 100%;
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 40rpx;
+  color: #000;
+  font-weight: 500;
+  margin-bottom: 24rpx;
+}
+
+.xlMiddleBox .xlItemBox {
+  width: 100%;
+  line-height: 68rpx;
+}
+
+.xlMiddleBox .xlItemBox .xlMap {
+  width: 100%;
+  height: 320rpx;
+}
+
+.xlMiddleBox .xlItemBox .xlLeftBox {
+  float: left;
+  color: #999;
+  font-size: 32rpx;
+  padding-right: 16rpx;
+  letter-spacing: 0;
+}
+
+.xlMiddleBox .xlItemBox .xlLeftBox .box {
+  width: 134rpx;
+  display: inline-block;
+}
+
+.xlMiddleBox .xlItemBox .xlLeftBox .box .colon {
+  letter-spacing: 0;
+  margin-left: 4rpx;
+}
+
+.xlMiddleBox .xlItemBox .xlLeftBox .w4 {
+  letter-spacing: 0;
+}
+
+.xlMiddleBox .xlItemBox .xlLeftBox .w3 {
+  letter-spacing: 13rpx;
+}
+
+.xlMiddleBox .xlItemBox .xlRightBox {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 176rpx;
+  min-height: 56rpx;
+  color: #333;
+  font-size: 32rpx;
+  /* margin-top: 28rpx; */
+}
+.xlMiddleBox .xlItemBox .xlRightBox image{
+  margin-top: 12rpx;
+}
+
+.xlBottomBox {
+  width: 100%;
+  padding: 70rpx 36rpx;
+  background: #fff;
+  margin-bottom: 24rpx;
+  box-sizing: border-box;
+}
+
+.xlBottomBox .xlTitle {
+  width: 100%;
+  border-bottom: 2rpx solid #f4f4f4;
+  font-size: 40rpx;
+  color: #000;
+  font-weight: 600;
+  padding-bottom: 42rpx;
+}
+
+.xlBottomBox .xlItemBox {
+  width: 100%;
+  height: 100rpx;
+  padding: 32rpx 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.xlBottomBox .xlItemBox .xlTopBox2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  color: #666;
+}
+
+.xlBottomBox .xlItemBox .xlTopBox2 .xlLeftBox {
+  width: 50%;
+  height: 100%;
+  color: #222;
+  font-size: 32rpx;
+}
+
+.xlBottomBox .xlItemBox .xlTopBox2 .xlRightBox {
+  width: 50%;
+  height: 100%;
+  text-align: right;
+  font-size: 28rpx;
+  color: #232323;
+}
+
+.xlBottomBox .xlItemBox .xlBottomBox2 {
+  color: #999;
+  margin-top: 20rpx;
+}
+
+.xlBottomBox .xlItemBox .xlBottomBox2 .xlLeftBox {
+  width: 180rpx;
+  height: 100%;
+  float: left;
+}
+
+.xlBottomBox .xlItemBox .xlBottomBox2 .xlRightBox {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-left: 180rpx;
+  font-size: 28rpx;
+}
+
+.xlSubmitBox {
+  width: 100%;
+  padding: 20rpx 30rpx;
+  background: #fff;
+  box-sizing: border-box;
+  padding-bottom: 128rpx;
+}
+
+.xlSubmitBox .xlAttentionBox {
+  width: calc(100% - 60rpx);
+  line-height: 52rpx;
+  font-size: 32rpx;
+  color: #999;
+  margin-bottom: 16rpx;
+  margin-left: 60rpx;
+  position: relative;
+  padding: 27rpx 0;
+}
+
+.xlSubmitBox .xlAttentionBox::after {
+  content: '注：';
+  width: 40rpx;
+  height: 40rpx;
+  font-size: 32rpx;
+  position: absolute;
+  left: -60rpx;
+  top: 26rpx;
+}
+
+.xlSubmitBtnBox {
+  width: 100%;
+  height: 88rpx;
+  padding: 12rpx 30rpx;
+  background: #fff;
+  box-shadow: 0px -2px 18px #ccc;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1000;
+}
+
+.xlSubmitBtnBox .xlSubmitBtn {
+  width: calc(100% - 69rpx);
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #fff;
+  background: #f33;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+/* 拨打电话弹窗 */
+
+.callPhone-wrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 8888;
+}
+
+.callPhone-wrap .callPhone-item {
+  background: #efeeee;
+  border-radius: 24rpx;
+  width: 540rpx;
+  /* height: 384rpx; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 34rpx;
+}
+
+.callPhone-wrap .callPhone-item .title {
+  color: #030303;
+  letter-spacing: -0.82rpx;
+  text-align: center;
+  line-height: 112rpx;
+}
+
+.callPhone-wrap .callPhone-item .phone-number {
+  color: #007aff;
+  letter-spacing: -0.41px;
+  text-align: center;
+  border-top: 2rpx solid #e5e5e5;
+  line-height: 97rpx;
+}
+
+/* 分享按钮 */
+
+.toHome {
+  width: 120rpx;
+  height: 120rpx;
+  position: fixed;
+  bottom: 150rpx;
+  right: 10rpx;
+}
+
+.toHome image {
+  width: 100%;
+  height: 100%;
+}
+
+.lump-wrap {
+  background: #fff;
+  margin-bottom: 24rpx;
+  padding: 46rpx 32rpx 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.lump-wrap .h3 {
+  font-family: PingFangSC-Medium;
+  font-size: 40rpx;
+  color: #000;
+  margin-bottom: 32rpx;
+  font-weight: 500;
+  display: block;
+}
+
+.user-msg-wrap, .noline .user-msg-info {
+  border: 0;
+}
+
+.msg-btn .btn {
+  border-radius: 16rpx;
+  font-size: 36rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin-top: 32rpx;
+}
+
+.more-msg-btn {
+  background: #ededed;
+  color: #4a4a4a;
+}
+
+.write-msg-btn {
+  background-image: linear-gradient(45deg, #ff7e7b 0%, #ffb686 100%);
+  box-shadow: 0 10px 10px 0 rgba(255, 116, 110, 0.30);
+  color: #fff;
+}
+
+/** 底部拨号窗 */
+
+.phone-dys {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: #fff;
+  height: 110rpx;
+  padding: 12rpx 30rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0px 0 32rpx rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.dys {
+  width: 360rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.dys-li {
+  width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  font-size: 28rpx;
+  color: #4a4a4a;
+}
+
+.dys .dys-li .cover {
+  width: 100%;
+  height: 100%;
+}
+
+.dys-li .share-btn {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.shareDetail {
+  width: 115rpx;
+  height: 104rpx;
+  position: absolute;
+  top: 1rpx;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shareDetail .icon-fenxiang {
+  font-size: 50rpx;
+  color:#ff3333;
+}
+
+/* .shareDetail .share {
+  margin-top: 8rpx;
+} */
+
+.callphone {
+  margin-left: 40rpx;
+}
+
+.callphone .btn {
+  display: inline-block;
+  width: 330rpx;
+  height: 88rpx;
+  background: #f33;
+  font-size: 32rpx;
+  color: #fff;
+  letter-spacing: 0.38rpx;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 88rpx;
+}
+.grade-wrap {
+  text-align: center;
+  margin-bottom: 98rpx;
+  padding-top: 30rpx;
+}
+
+.grade-wrap .score {
+  font-size: 120rpx;
+  color: #fd7015;
+  letter-spacing: 0;
+  text-shadow: 0 12rpx 36rpx rgba(255, 51, 51, 0.35);
+  font-weight: 600;
+}
+
+.grade-wrap .total-score {
+  font-size: 36rpx;
+  color: #9b9b9b;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 40rpx;
+  margin-top: 6rpx;
+}
+
+.grade-wrap .grade-num {
+  font-size: 36rpx;
+  color: #4a4a4a;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 40rpx;
+  margin-top: 32rpx;
+}

@@ -1,0 +1,20 @@
+<view class="xlTabbarBox">
+    <view class="xlList">
+        <view class="xlImgBox {{tabbarNum == 1 ? 'xlActive' : ''}}" bindtap="xlBtnTap1">
+            <image wx:if="{{tabbarNum != 1}}" src="../../images/home1.png" lazy-load="{{true}}" />
+            <image wx:if="{{tabbarNum == 1}}" src="../../images/home2.png" lazy-load="{{true}}" />
+        </view>
+        <view class="xlText">
+            首页
+        </view>
+    </view>
+    <view class="xlList {{tabbarNum == 2 ? 'xlActive' : ''}}" bindtap="xlBtnTap2">
+        <view class="xlImgBox">
+            <image wx:if="{{tabbarNum != 2}}" src="../../images/my1.png" lazy-load="{{true}}" />
+            <image wx:if="{{tabbarNum == 2}}" src="../../images/my2.png" lazy-load="{{true}}" />
+        </view>
+        <view class="xlText">
+            我的
+        </view>
+    </view>
+</view>

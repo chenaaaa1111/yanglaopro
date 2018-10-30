@@ -1,0 +1,17 @@
+<!--components/iptquestion/iptquestion.wxml-->
+<wxs module='questionType'>
+  module.exports={
+    GROUP_TYPE_SINGLE:'single',
+    GROUP_TYPE_MULTI:'multi'
+  };
+</wxs>
+<view class='survey ans-container'>
+  <view class='ans-item'>
+    <text class='title'>{{title}}</text>
+    <input class='ipt' type='text' placeholder='点击输入印象深刻的机构名称' bindinput='onAnswerChanged'></input>
+  </view>
+  <view>
+    <radiogroup wx:if='{{type==questionType.GROUP_TYPE_SINGLE}}' gtype='{{gtype}}' options='{{options}}' bindchange='onAnswerChanged'></radiogroup>
+    <multigroup wx:elif='{{type==questionType.GROUP_TYPE_MULTI}}' gtype='{{gtype}}' options='{{options}}' bindchange='onAnswerChanged'></multigroup>
+  </view>
+</view>

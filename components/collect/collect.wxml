@@ -1,0 +1,10 @@
+<!--components/collect/collect.wxml-->
+<view>
+<wxs module='btnType'>
+  module.exports={
+    FAVOUR_BTN:'FAVOUR_BTN',
+    COLLECT_BTN:'COLLECT_BTN'
+  };
+  </wxs>
+<radiobutton type='{{btnType.COLLECT_BTN}}' label='收藏' selected='{{selected}}' bindselect='onRadioButtonTap'></radiobutton>
+</view>

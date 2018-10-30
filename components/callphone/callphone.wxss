@@ -1,0 +1,52 @@
+.callPhone-wrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 888888;
+}
+
+.callPhone-wrap .callPhone-item {
+  background: #efeeee;
+  border-radius: 24rpx;
+  width: 540rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36rpx;
+}
+
+.callPhone-wrap .callPhone-item .title {
+  color: #030303;
+  letter-spacing: -0.82rpx;
+  text-align: center;
+  margin-top: 48rpx;
+  margin-bottom: 10rpx;
+}
+
+.callPhone-wrap .callPhone-item .phone-number {
+  letter-spacing: -0.86rpx;
+  text-align: center;
+  color: #000;
+  margin-bottom: 46rpx;
+}
+
+.callPhone-wrap .callPhone-item .phoneBtn-wrap {
+  border-top: 2rpx solid #c6c3c3;
+}
+
+.callPhone-wrap .callPhone-item .phoneBtn-wrap .callOff {
+  border-right: 2rpx solid #c6c3c3;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.callPhone-wrap .callPhone-item .phoneBtn-wrap text {
+  color: #007aff;
+  display: inline-block;
+  line-height: 88rpx;
+  text-align: center;
+  width: 50%;
+}

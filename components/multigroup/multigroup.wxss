@@ -1,0 +1,50 @@
+/* components/multigroup/multigroup.wxss */
+
+.survey .ans-item{
+  margin: 0 30rpx;
+  /* border:1rpx solid #900; */
+  padding: 20rpx 70rpx;
+  color: #4A4A4A;
+  font-size: 40rpx;
+}
+
+.survey .ans-item.selected{
+  background-color: #EDF0F2;
+  color: #FF3333;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.survey .ans-item .selector{
+  width:16rpx;
+  height:36rpx;
+  border-right: 6rpx solid #FF3333;
+  border-bottom: 6rpx solid #FF3333;
+  transform-origin: right bottom;
+  -webkit-transform-origin:  right bottom;
+  transform: rotateZ(45deg);
+  -webkit-transform: rotateZ(45deg);
+}
+
+.survey .lb-container{
+  flex:1;
+}
+
+.survey .lb-container .label{
+  font-size: 40rpx;
+  color:#4A4A4A;
+}
+
+.survey .selected .lb-container .label{
+  color:#FF3333;
+}
+
+.survey .selected .label text{
+  font-weight: bolder;
+}
+
+.survey .lb-container .extra{
+  font-size: 32rpx;
+  color:#4A4A4A;
+}

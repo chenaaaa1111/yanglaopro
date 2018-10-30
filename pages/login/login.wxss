@@ -1,0 +1,41 @@
+.container {
+    width: 700rpx; margin-left: 25rpx; padding-top: 40px; height: 100%; position: relative; box-sizing: border-box;
+}
+.container .xlTitle {
+    padding: 20rpx; font-size: 48rpx; font-weight: 500; color: #000;
+}
+.container .xlFormBox {
+    padding: 0 20rpx; margin-bottom: 16rpx; 
+    font-size: 28rpx; color: #999; border-bottom: 1px solid #dfdfe4;
+}
+.container .xlPhoneBox {
+    padding-top: 28rpx; position: relative;
+}
+.container .xlFormBox.xlErrorActive {
+    border-color: red;
+}
+.container .xlPhoneBox input {
+    width: 450rpx; height: 60rpx; line-height: 60rpx; display: inline-block; font-size: 28rpx; color: #000;
+}
+.container .xlPhoneBox button {
+    width: 160rpx; display: inline-block; text-align: center; border: none; outline: none; background: none; padding: 0;
+    height: 60rpx; line-height: 60rpx; color: #4a4a4a; font-size: 28rpx;
+    position: absolute; right: 0; bottom: 0;
+}
+.container .xlPhoneBox button::after {
+    border: none;
+}
+.container .xlMsgBox {
+    padding-top: 28rpx;
+}
+.container .xlMsgBox input {
+    width: 100%; height: 60rpx; line-height: 60rpx; display: inline-block; font-size: 28rpx; color: #000;
+}
+
+.xlSubmitBtn {
+    width: 100%; height: 100rpx; margin-top: 80rpx;
+}
+.xlSubmitBtn button {
+    width: calc(100% - 60rpx); margin-left: 30rpx; background: #FF3333; height: 100rpx; line-height: 100rpx; 
+    font-size: 32rpx; color: #FFF; border-radius: 0;
+}

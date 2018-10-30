@@ -1,0 +1,50 @@
+<view class="container" catchtouchmove="true">
+  <form bindsubmit="formSubmit" wx:if="{{msgStatus=='2'}}">
+    <view class="title">{{title}}</view>
+    <view class="phone-num" wx:if="{{!loginStatus}}">
+      <input phone="phone" placeholder="{{placeholdP}}" name="input" type="number" value="{{phone}}" maxlength="11" placeholder-style="color:#91929e;"></input>
+    </view>
+    <view class="app-star">
+      <view class="star">
+        <view class="starPIC star1" wx:for="{{lightStar}}" wx:key="{{index}}">
+          <text class="iconfont icon-wuxing" bindtap="chooseLightstar" data-idx="{{index}}"></text>
+        </view>
+        <view class="starPIC star2" wx:for="{{grayStar}}" wx:key="{{index}}">
+          <text class="iconfont icon-wuxing" bindtap="chooseGrayStar" data-idx="{{index}}"></text>
+        </view>
+      </view>
+      <view class="note">
+        <text>请选择您对该机构的总体评价</text>
+        <text>一星最差，五星最好</text>
+      </view>
+    </view>
+    <view class="section">
+      <textarea placeholder="{{placeholdC}}" maxlength="200" value="{{comment}}" name="textarea" placeholder-style="color:#91929e;" />
+    </view>
+    <view class="formbtn">
+      <view class="subbtn cancel" bindtap="cancel">取消</view>
+      <button class="subbtn affirm wxbtn" formType="submit">确认提交</button>
+      <view class="subbtn affirm">确认提交</view>
+    </view>
+  </form>
+</view>
+
+<view class="success-model" catchtouchmove="true" wx:if="{{msgStatus!='2'}}">
+  <view wx:if="{{msgStatus=='1'}}">
+    <view class="img-box">
+      <text class="iconfont icon-chenggong"></text>
+    </view>
+    <view class='text'>
+      <text>您的留言提交成功</text>
+    </view>
+  </view>
+  <view wx:if="{{msgStatus=='0'}}">
+    <view class="img-box">
+      <text class="iconfont icon-shibai"></text>
+    </view>
+    <view class='text'>
+      <text>您的留言提交失败</text>
+      <text>请重新留言</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+ <view class='callPhone-wrap' catchtouchmove="true"  catchtap='OnhideCallPhone' wx:if="{{showCallPhone}}">
+    <view class='callPhone-item'>
+      <view class='title'>是否拨打电话</view>
+      <view class='phone-number'>
+        电话号码：010-65883352
+      </view>
+      <view class="phoneBtn-wrap">
+        <text class="callOff">取消</text>
+        <text class="callOn" data-reply-phone="010-65883352" catchtap='phoneCall'>确认</text>
+      </view>
+    </view>
+  </view>

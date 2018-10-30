@@ -1,0 +1,113 @@
+/* pages/active/alzheimer/alzheimer.wxss */
+@import "./../../../styles/list-item.wxss";
+
+.header{
+  
+}
+.tite{
+  font-size: 40rpx;
+  display: flex;
+  margin-top:30rpx;
+  font-weight: 900;
+
+}
+.cntend{
+  padding: 0rpx 40rpx 10rpx 40rpx;
+  font-size: 32rpx;
+ 
+}
+.shizc{
+  margin-top: 72rpx;
+}
+.textcntent{
+   margin-top: 18rpx;
+   color: #4A4A4A ;
+   margin-bottom: 36rpx;
+}
+.viewMre{
+  text-align: center;
+  font-size: 32rpx;
+}
+.imgcntent{
+  display: flex;
+}
+.imgview{
+  flex: 1;
+}
+.img{
+  width: 320rpx;
+  height: 240rpx;
+}
+.smatite{
+  font-size: 28rpx;
+
+}
+.datatime{
+  font-size: 24rpx;
+}
+.teview{
+  text-align: center;
+  padding-top:40rpx;
+  padding-bottom: 44rpx;
+  font-size: 32rpx;
+}
+.homeImage{
+  height: 240rpx;
+  width: 750rpx;
+}
+.sutext{
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  font-size: 32rpx;
+  color: #4A4A4A;
+  text-align: justify;
+  line-height: 56rpx;
+  padding-top: 40rpx;
+}
+.shizhi{
+    width:236rpx;
+    height:56rpx;
+}
+.imtitle{
+  display: inline-block;
+  margin-left: 40rpx;
+  font-size: 36rpx;
+  line-height: 64rpx;
+  width: 420rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.zice{
+  margin-top: 56rpx;
+}
+.nopadding{
+  padding-left: 0;
+  padding-right: 0;
+}
+.pad{
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+}
+.nomt{
+  margin-top: 0;
+}
+.newstitle{
+ 
+  width: 426rpx;
+}
+.newContent{
+  width: 800rpx;
+  white-space: nowrap;
+  word-break: normal;
+}
+.newscroll{
+  width: 460rpx;
+  overflow-x: scroll;
+}
+.imswiper{
+  height: 64rpx;
+}
+.imgzz{
+  width: 668rpx;
+  height: 368rpx;
+}

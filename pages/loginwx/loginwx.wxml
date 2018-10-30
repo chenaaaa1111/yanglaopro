@@ -1,0 +1,7 @@
+<view class="container">
+    <view class="xlTitle"><text>推荐登录方式</text></view>
+    <button class="xlSubmitBtn" open-type="getPhoneNumber" bindgetphonenumber="WXLogin">
+        <image src="../../images/wechat@2x.png"></image>
+        微信账号登录
+    </button>
+</view>

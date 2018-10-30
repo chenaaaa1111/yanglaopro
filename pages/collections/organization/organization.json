@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "机构养老列表",
+    "usingComponents": {
+      "webp": "./../../../components/webp/webp"
+    }
+}

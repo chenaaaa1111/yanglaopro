@@ -1,0 +1,51 @@
+.container {
+    width: 100%;
+}
+.xlUserBox {
+    width: 100%; height: 500rpx; background: linear-gradient(-45deg,#FF3C3C,#FF5280); 
+    margin-bottom: 20px; padding-top: 100rpx; position: relative; box-sizing: border-box;
+}
+.xlUserBox .xlImageBox {
+    width: 200rpx; height: 200rpx; border-radius: 100%; overflow: hidden; 
+    margin-left: 50%; transform: translateX(-100rpx); background: #FFF;
+}
+.xlUserBox .xlImageBox .xlUserImg {
+    width: 100%; height: 100%; border-radius: 100%;
+}
+.xlUserBox .xlImageBox .xlImageBg {
+    width: 100%; border-radius: 100%; text-align: center;
+    font-size: 100rpx; color: #FF4B4E; margin-top: 45rpx;
+}
+.xlUserBox .xlTextBox {
+    width: 100%; height: 60rpx; line-height: 60rpx; font-size: 40rpx; 
+    color: #FFF; margin-top: 40rpx; text-align: center;
+}
+.xlUserBox .xlLoginOutBtn {
+    width: 100rpx; height: 50rpx; position: absolute; top: 40rpx; right: 40rpx;
+    font-size: 32rpx; color: #FFF; text-align: center;
+}
+
+.xlListBox {
+    width: 710rpx; margin-left: 20rpx; padding: 40rpx; box-sizing: border-box;
+    margin-bottom: 40rpx; background: rgba(245,195,0,0.14); border-radius: 20rpx;
+}
+.xlListBox .xlList {
+    height: 120rpx; line-height: 120rpx; border-bottom: 1px solid #E6E6E6; 
+    position: relative; padding: 20rpx 0rpx; box-sizing: border-box;
+}
+.xlListBox .xlList:last-of-type {
+    border-bottom: none;
+}
+.xlListBox .xlList .xlTextBox {
+    height: 80rpx; line-height: 80rpx; width: calc(100% - 80rpx); 
+    box-sizing: border-box; overflow: hidden;
+    font-size: 40rpx; color: #000;
+}
+.xlListBox .xlList .xlTextBox .xlJiange {
+    display: inline-block; width: 80rpx;
+}
+.xlListBox .xlList .xlRightBox {
+    width: 20rpx; height: 20rpx; position: absolute; right: 40rpx; top: 50rpx;
+    border-top: 4rpx solid #CECFD4; border-right: 4rpx solid #CECFD4;
+    transform: rotateZ(45deg);
+}

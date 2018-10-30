@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "webp": "./../../../components/webp/webp"
+  },
+  "navigationBarTitleText": "关爱认知症"
+
+
+}

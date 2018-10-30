@@ -1,0 +1,44 @@
+/* components/ordergroup/ordergroup.wxss */
+@import '/styles/svgs.wxss';
+.li{
+  text-align: center;
+  font-size:28rpx;
+  line-height: 88rpx;
+  color:#2A2A00;
+  border-top:1rpx solid #eee;
+  position: relative;
+}
+.red{
+  color:#E2594A;
+}
+.black{
+  color:#000;
+}
+.default-list{
+  position: absolute;
+  left:0;
+  right: 0;
+  background-color: #fff;
+  transition:all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+}
+
+.default-list.show{
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+}
+.default-list.hide{
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+}
+.order-icon{
+  display: inline-block;
+  vertical-align: middle;
+  padding-top:10rpx;
+}
+.order-icon .iconfont{
+  font-size: 80rpx;
+}

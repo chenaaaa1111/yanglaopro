@@ -1,0 +1,6 @@
+.xlCollectionBox {
+    width: 52rpx; height: 52rpx;
+}
+.xlCollectionBox .xlCollectionImg {
+    width: 100%; height: 100%;
+}
